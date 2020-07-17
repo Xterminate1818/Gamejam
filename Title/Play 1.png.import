@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wizard Background.png-625928d3a20f0fec276ab65640a84bea.stex"
+path="res://.import/Play 1.png-2f952745805ef30f5ad31de5b61b0289.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Title/levels/Wizard Background.png"
-dest_files=[ "res://.import/Wizard Background.png-625928d3a20f0fec276ab65640a84bea.stex" ]
+source_file="res://Title/Play 1.png"
+dest_files=[ "res://.import/Play 1.png-2f952745805ef30f5ad31de5b61b0289.stex" ]
 
 [params]
 

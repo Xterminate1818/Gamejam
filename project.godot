@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamejam"
-run/main_scene="res://Title/levels/Node2D.tscn"
+run/main_scene="res://Title/Tilte.tscn"
 config/icon="res://icon.png"
 
 [autoload]
