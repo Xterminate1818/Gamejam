@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fart/Wizard Background.png" type="Texture" id=1]
+[ext_resource path="res://fart/Play 1.png" type="Texture" id=2]
+[ext_resource path="res://fart/Play 2.png" type="Texture" id=3]
+[ext_resource path="res://fart/Quit 1.png" type="Texture" id=4]
+[ext_resource path="res://fart/Quit 2.png" type="Texture" id=5]
+
+[node name="Node" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 0.989594
+margin_top = 73.7678
+margin_right = 120.99
+margin_bottom = 124.768
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 1.05505
+margin_top = 127.685
+margin_right = 114.055
+margin_bottom = 178.685
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
