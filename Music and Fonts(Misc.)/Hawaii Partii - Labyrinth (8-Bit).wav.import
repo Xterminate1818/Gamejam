@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hawaii Partii - Labyrinth (8-Bit).wav-510614bcb7d5cfd2ff8f19601b4cdc47.sample"
+
+[deps]
+
+source_file="res://Music and Fonts(Misc.)/Hawaii Partii - Labyrinth (8-Bit).wav"
+dest_files=[ "res://.import/Hawaii Partii - Labyrinth (8-Bit).wav-510614bcb7d5cfd2ff8f19601b4cdc47.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
