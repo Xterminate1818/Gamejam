@@ -4,10 +4,11 @@
 [ext_resource path="res://art/WhiteProjectile.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 7.0
+radius = 4.0
 
 [node name="WhiteProjectile" type="KinematicBody2D"]
-scale = Vector2( 0.5, 0.5 )
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
