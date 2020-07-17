@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name Projectile
 
-export var speed = 100
+export var speed = 300
 var velocity = Vector2.ZERO
 
 func _physics_process(delta):
