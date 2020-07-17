@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Quit 2.png-a42d390cea3f08f58aa01e20e835fc79.stex"
+path="res://.import/Quit 2.png-97a423eb7f5ea2b28d83ba3435a6fb9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/Quit 2.png"
-dest_files=[ "res://.import/Quit 2.png-a42d390cea3f08f58aa01e20e835fc79.stex" ]
+source_file="res://Title/levels/Quit 2.png"
+dest_files=[ "res://.import/Quit 2.png-97a423eb7f5ea2b28d83ba3435a6fb9e.stex" ]
 
 [params]
 
