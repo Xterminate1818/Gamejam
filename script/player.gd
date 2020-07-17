@@ -21,6 +21,8 @@ onready var Occluder: LightOccluder2D = $Sprite/LightOccluder2D
 onready var Anim: AnimationPlayer = $AnimationPlayer
 onready var CoyoteTimer: Timer = $CoyoteTimer
 onready var StateMachine: Node = $PlayerStateMachine
+onready var HoldPosition: Node2D = $HoldPosition
+onready var ProjectileSpawn: Node2D = $HoldPosition/Wand/ProjectileSpawn
 
 
 func _ready():
@@ -41,11 +43,12 @@ func handle_move_input():
 	if input_direction > 0:
 		Spr.flip_h = false
 		Occluder.scale.x = 1
+		HoldPosition.rotation_degrees = 90
 
 	if input_direction < 0:
 		Spr.flip_h = true
 		Occluder.scale.x = -1
-
+		HoldPosition.rotation_degrees = -90
 
 func jump():
 	velocity.y = max_jump_velocity
