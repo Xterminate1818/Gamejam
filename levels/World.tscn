@@ -117,10 +117,10 @@ autoplay = "Type Writer"
 [node name="Text3" type="Node" parent="."]
 
 [node name="sample_text" type="Label" parent="Text3"]
-margin_left = 560.0
-margin_top = 20.0
-margin_right = 713.0
-margin_bottom = 93.0
+margin_left = 70.3497
+margin_top = 169.738
+margin_right = 223.35
+margin_bottom = 242.738
 custom_fonts/font = SubResource( 1 )
 text = "A and S
 
@@ -138,10 +138,10 @@ autoplay = "Type Writer"
 [node name="Text4" type="Node" parent="."]
 
 [node name="sample_text" type="Label" parent="Text4"]
-margin_left = 576.046
-margin_top = 51.1479
-margin_right = 729.046
-margin_bottom = 124.148
+margin_left = 90.1642
+margin_top = 189.971
+margin_right = 243.164
+margin_bottom = 262.971
 custom_fonts/font = SubResource( 1 )
 text = "Walk"
 autowrap = true
