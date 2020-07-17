@@ -82,7 +82,7 @@ position = Vector2( 0, -6 )
 rotation = 1.5708
 
 [node name="Wand" type="Sprite" parent="HoldPosition"]
-position = Vector2( 10, 0 )
+position = Vector2( 9, -4.76837e-007 )
 rotation = 1.5708
 texture = ExtResource( 4 )
 
@@ -113,6 +113,10 @@ anims/Running = SubResource( 5 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
+
+[node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.4
 one_shot = true
 
 [node name="Hitbox" type="Area2D" parent="."]

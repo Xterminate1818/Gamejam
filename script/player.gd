@@ -21,9 +21,11 @@ onready var Spr: Sprite = $Sprite
 onready var Occluder: LightOccluder2D = $Sprite/LightOccluder2D
 onready var Anim: AnimationPlayer = $AnimationPlayer
 onready var CoyoteTimer: Timer = $CoyoteTimer
+onready var ShootDelay: Timer = $ShootDelay
 onready var StateMachine: Node = $PlayerStateMachine
 onready var HoldPosition: Node2D = $HoldPosition
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
+
 
 
 func _ready():
@@ -43,10 +45,8 @@ func handle_move_input():
 	HoldPosition.look_at(get_global_mouse_position())
 	HoldPosition.rotation_degrees
 	
-	
 	if Input.is_action_just_pressed("shoot"):
 		fire_projectile()
-		print("fire")
 
 	if input_direction > 0:
 		Spr.flip_h = false
@@ -61,16 +61,16 @@ func jump():
 	CoyoteTimer.stop()
 
 func fire_projectile():
-	var temp = projectile_ps.instance()
-	get_tree().current_scene.add_child(temp)
-	temp.global_position = ProjectileSpawn.global_position
-	temp.rotation_degrees = HoldPosition.rotation_degrees
-	temp.launch()
-
+	if ShootDelay.is_stopped():
+		var temp = projectile_ps.instance()
+		get_tree().current_scene.add_child(temp)
+		temp.global_position = ProjectileSpawn.global_position
+		temp.rotation_degrees = HoldPosition.rotation_degrees
+		temp.launch()
+		ShootDelay.start()
 
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
-
 
 func apply_movement():
 	if velocity.x > -1 and velocity.x < 1:
