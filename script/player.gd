@@ -15,6 +15,7 @@ var walljump_height = 2.25 * 16
 var jump_duration = 0.35
 var is_grounded
 var touching_wall = 0 
+var projectile_ps = globals.WHITE_PROJECTILE_PS
 
 onready var Spr: Sprite = $Sprite
 onready var Occluder: LightOccluder2D = $Sprite/LightOccluder2D
@@ -22,7 +23,7 @@ onready var Anim: AnimationPlayer = $AnimationPlayer
 onready var CoyoteTimer: Timer = $CoyoteTimer
 onready var StateMachine: Node = $PlayerStateMachine
 onready var HoldPosition: Node2D = $HoldPosition
-onready var ProjectileSpawn: Node2D = $HoldPosition/Wand/ProjectileSpawn
+onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
 
 
 func _ready():
@@ -39,20 +40,32 @@ func _physics_process(delta):
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	velocity.x = lerp(velocity.x, speed * input_direction, get_movement_weight())
+	HoldPosition.look_at(get_global_mouse_position())
+	HoldPosition.rotation_degrees
+	
+	
+	if Input.is_action_just_pressed("shoot"):
+		fire_projectile()
+		print("fire")
 
 	if input_direction > 0:
 		Spr.flip_h = false
 		Occluder.scale.x = 1
-		HoldPosition.rotation_degrees = 90
 
 	if input_direction < 0:
 		Spr.flip_h = true
 		Occluder.scale.x = -1
-		HoldPosition.rotation_degrees = -90
 
 func jump():
 	velocity.y = max_jump_velocity
 	CoyoteTimer.stop()
+
+func fire_projectile():
+	var temp = projectile_ps.instance()
+	get_tree().current_scene.add_child(temp)
+	temp.global_position = ProjectileSpawn.global_position
+	temp.rotation_degrees = HoldPosition.rotation_degrees
+	temp.launch()
 
 
 func apply_gravity(delta, modifier = 1):

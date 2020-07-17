@@ -9,8 +9,9 @@ func _physics_process(delta):
 	if collision != null:
 		on_impact()
 
-func launch(direction: Vector2):
-	velocity = direction * speed
+func launch():
+	velocity = (Vector2(speed, 0)).rotated(rotation)
+	print(velocity)
 
 func on_impact():
 	queue_free()
