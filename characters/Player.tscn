@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
-[ext_resource path="res://script/PlayerStateMachine.gd" type="Script" id=2]
-[ext_resource path="res://art/WizardM.png" type="Texture" id=3]
+[ext_resource path="res://meta/BoundedCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/PlayerStateMachine.gd" type="Script" id=3]
+[ext_resource path="res://art/WizardM.png" type="Texture" id=4]
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -5, -6, -5, -6, -10, -7, -10, -7, -12, -6, -12, -6, -19, -4, -19, -4, -18, -3, -18, -3, -17, 1, -17, 1, -16, 3, -16, 3, -15, 4, -15, 4, -14, 5, -14, 5, -13, 6, -13, 6, -12, 7, -12, 7, -10, 6, -10, 6, -9, 5, -9, 5, -8, 6, -8, 6, -4, 5, -4, 5, 0, -7, 0 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6, 6 )
 
 [sub_resource type="Animation" id=3]
@@ -27,7 +28,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Jumping"
 length = 0.01
 tracks/0/type = "value"
@@ -43,8 +44,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Running"
+[sub_resource type="Animation" id=5]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -63,29 +63,37 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.75
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
 [node name="PlayerStateMachine" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -12 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 vframes = 3
 hframes = 4
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
 visible = false
 position = Vector2( 0, 12 )
-occluder = SubResource( 2 )
+occluder = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 3 )
-anims/Jumping = SubResource( 5 )
-anims/Running = SubResource( 4 )
+anims/Jumping = SubResource( 4 )
+anims/Running = SubResource( 5 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+[connection signal="grounded_updated" from="." to="Node2D" method="_on_grounded_updated"]

@@ -63,10 +63,10 @@ func apply_movement():
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if !is_on_floor() and was_on_floor and velocity.y >= 0:
 		CoyoteTimer.start()
+	if !was_on_floor and is_on_floor():
+		emit_signal("grounded_updated", is_on_floor())
 	var was_grounded = is_grounded
 	is_grounded = is_on_floor()
-	if was_grounded == null or is_grounded != was_grounded:
-		emit_signal("grounded_updated", is_grounded)
 
 
 func get_movement_weight():
