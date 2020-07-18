@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 signal grounded_updated(is_grounded)
+signal health_updated(new_health)
+signal energy_updated(new_energy)
 
 var velocity = Vector2()
 var input_direction: int = 0
@@ -15,7 +17,6 @@ var walljump_height = 2.25 * 16
 var jump_duration = 0.35
 var is_grounded
 var touching_wall = 0 
-var projectile_ps = globals.WHITE_PROJECTILE_PS
 
 onready var Spr: Sprite = $Sprite
 onready var Occluder: LightOccluder2D = $Sprite/LightOccluder2D
@@ -25,8 +26,24 @@ onready var ShootDelay: Timer = $ShootDelay
 onready var StateMachine: Node = $PlayerStateMachine
 onready var HoldPosition: Node2D = $HoldPosition
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
+onready var Wand: Sprite = $HoldPosition/Wand
+onready var Stats = $Stats
 
+onready var health = Stats.health setget set_health, get_health
+onready var energy = Stats.energy setget set_energy, get_energy
 
+func set_health(value):
+	Stats.set_health(value)
+
+func get_health():
+	return Stats.get_health()
+
+func set_energy(value):
+	Stats.set_energy(value)
+
+func get_energy():
+	return Stats.get_energy()
+	
 
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
@@ -43,10 +60,9 @@ func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	velocity.x = lerp(velocity.x, speed * input_direction, get_movement_weight())
 	HoldPosition.look_at(get_global_mouse_position())
-	HoldPosition.rotation_degrees
 	
-	if Input.is_action_just_pressed("shoot"):
-		fire_projectile()
+	if Input.is_action_pressed("shoot"):
+		Wand.fire_projectile(HoldPosition.rotation_degrees)
 
 	if input_direction > 0:
 		Spr.flip_h = false
@@ -60,14 +76,7 @@ func jump():
 	velocity.y = max_jump_velocity
 	CoyoteTimer.stop()
 
-func fire_projectile():
-	if ShootDelay.is_stopped():
-		var temp = projectile_ps.instance()
-		get_tree().current_scene.add_child(temp)
-		temp.global_position = ProjectileSpawn.global_position
-		temp.rotation_degrees = HoldPosition.rotation_degrees
-		temp.launch()
-		ShootDelay.start()
+
 
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
