@@ -78,3 +78,12 @@ func _on_Conduit1_toggled(button_pressed):
 		parent.WandManager.set_current_conduit(active_conduit)
 	else:
 		parent.WandManager.clear_conduit()
+
+
+func _on_Conduit2_toggled(button_pressed):
+	if button_pressed and Conduit2.is_visible():
+		active_conduit = Globals.Magic[Globals.Conduit2]
+		print(active_conduit)
+		parent.WandManager.set_current_conduit(active_conduit)
+	else:
+		parent.WandManager.clear_conduit()
