@@ -24,8 +24,9 @@ onready var Anim: AnimationPlayer = $AnimationPlayer
 onready var CoyoteTimer: Timer = $CoyoteTimer
 onready var ShootDelay: Timer = $ShootDelay
 onready var StateMachine: Node = $PlayerStateMachine
-onready var HoldPosition: Node2D = $HoldPosition
+onready var WandManager: Node2D = $WandManager
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
+onready var Inventory: CanvasLayer = $Inventory
 onready var Wand
 onready var Stats = $Stats
 
@@ -62,10 +63,10 @@ func _physics_process(delta):
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	velocity.x = lerp(velocity.x, speed * input_direction, get_movement_weight())
-	HoldPosition.look_at(get_global_mouse_position())
+	WandManager.look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("shoot") and Wand != null:
-		Wand.fire_projectile(HoldPosition.rotation_degrees)
+		Wand.fire_projectile(WandManager.rotation_degrees)
 
 	if input_direction > 0:
 		Spr.flip_h = false
