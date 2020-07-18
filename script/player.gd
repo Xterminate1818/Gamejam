@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 signal grounded_updated(is_grounded)
+signal health_updated(new_health)
+signal energy_updated(new_energy)
 
 var velocity = Vector2()
 var input_direction: int = 0
@@ -25,8 +27,23 @@ onready var StateMachine: Node = $PlayerStateMachine
 onready var HoldPosition: Node2D = $HoldPosition
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
 onready var Wand: Sprite = $HoldPosition/Wand
+onready var Stats = $Stats
 
+onready var health = Stats.health setget set_health, get_health
+onready var energy = Stats.energy setget set_energy, get_energy
 
+func set_health(value):
+	Stats.set_health(value)
+
+func get_health():
+	return Stats.get_health()
+
+func set_energy(value):
+	Stats.set_energy(value)
+
+func get_energy():
+	return Stats.get_energy()
+	
 
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)

@@ -13,5 +13,5 @@ script = ExtResource( 2 )
 position = Vector2( -6.11959e-007, -7 )
 
 [node name="ShootDelay" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.3
 one_shot = true

@@ -8,6 +8,7 @@ const SHIFT_DURATIOIN = .5
 var facing = 0
 var prev_facing = facing
 
+
 onready var prev_pos = get_camera_position()
 onready var tween: Tween = $Tween
 onready var parent = get_parent()
@@ -20,10 +21,10 @@ func set_limits():
 	var tilemap: TileMap = get_tree().get_nodes_in_group("Tilemap")[0]
 	var map_limits = tilemap.get_used_rect()
 	var map_cellsize = tilemap.cell_size
-	limit_left = (map_limits.position.x + 1) * map_cellsize.x
-	limit_right = (map_limits.end.x - 1) * map_cellsize.x - 1
-	limit_top = (map_limits.position.y + 1) * map_cellsize.y
-	limit_bottom = (map_limits.end.y - 1) * map_cellsize.y
+	limit_left = (map_limits.position.x + 0.5) * map_cellsize.x
+	limit_right = (map_limits.end.x - 0.5) * map_cellsize.x - 1
+	limit_top = (map_limits.position.y + 0.5) * map_cellsize.y
+	limit_bottom = (map_limits.end.y - 0.5) * map_cellsize.y
 
 
 func _process(delta):
