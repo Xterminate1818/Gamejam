@@ -11,6 +11,10 @@
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -5, -6, -5, -6, -10, -7, -10, -7, -12, -6, -12, -6, -19, -4, -19, -4, -18, -3, -18, -3, -17, 1, -17, 1, -16, 3, -16, 3, -15, 4, -15, 4, -14, 5, -14, 5, -13, 6, -13, 6, -12, 7, -12, 7, -10, 6, -10, 6, -9, 5, -9, 5, -8, 6, -8, 6, -4, 5, -4, 5, 0, -7, 0 )
 
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.0
+height = 2.0
+
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
 length = 0.8
@@ -60,10 +64,6 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 6.0
-height = 4.0
-
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
 script = ExtResource( 1 )
@@ -99,6 +99,11 @@ visible = false
 position = Vector2( 0, 12 )
 occluder = SubResource( 1 )
 
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -7 )
+shape = SubResource( 2 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 3 )
 anims/Jumping = SubResource( 4 )
@@ -118,9 +123,5 @@ position = Vector2( 0, -7 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 visible = false
-polygon = PoolVector2Array( -6, -12, -6, -5, -7, -5, -7, -3, -6, -3, -6, -0.52261, -6, 2, -5, 2, -5, 4, -6, 4, -6, 5, -7, 5, -7, 7, -3.9179, 7, 0.0151539, 7, 5, 7, 5, 5.0024, 5, 3, 6, 3, 6, 0.882053, 6, -1, 5, -1, 5, -2, 6, -2, 6, -3, 7, -3, 7, -5, 6, -5, 6, -6, 5, -6, 5, -7, 4, -7, 4, -8, 3, -8, 3, -9, 1, -9, 1, -10, -3, -10, -3, -11, -4, -11, -4, -12, -6, -12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -8 )
-shape = SubResource( 6 )
+polygon = PoolVector2Array( -6, -12, -6, -5, -7, -5, -7, -3, -6, -3, -6, 2, -5, 2, -5, 4, -6, 4, -6, 5, -7, 5, -7, 7, 5, 7, 5, 3, 6, 3, 6, -1, 5, -1, 5, -2, 6, -2, 6, -3, 7, -3, 7, -5, 6, -5, 6, -6, 5, -6, 5, -7, 4, -7, 4, -8, 3, -8, 3, -9, 1, -9, 1, -10, -3, -10, -3, -11, -4, -11, -4, -12, -6, -12 )
 [connection signal="grounded_updated" from="." to="Camera" method="_on_grounded_updated"]

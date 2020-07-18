@@ -59,6 +59,8 @@ func _ready():
 func _physics_process(delta):
 	Globals.player = position
 	emit_signal("grounded_updated", is_on_floor())
+	if get_health() <= 0:
+		get_tree().change_scene("res://levels/World.tscn")
 
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
@@ -103,12 +105,6 @@ func get_movement_weight():
 		return 0.2
 	else:
 		return 0.07
-
-
-
-
-
-
 
 
 func _on_Area2D_body_entered(body):

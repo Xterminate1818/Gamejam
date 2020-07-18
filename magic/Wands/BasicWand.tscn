@@ -10,7 +10,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ProjectileSpawn" type="Position2D" parent="."]
-position = Vector2( -6.11959e-007, -7 )
+position = Vector2( -6.11959e-07, -7 )
 
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 0.3
