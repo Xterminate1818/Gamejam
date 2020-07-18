@@ -26,7 +26,7 @@ onready var ShootDelay: Timer = $ShootDelay
 onready var StateMachine: Node = $PlayerStateMachine
 onready var HoldPosition: Node2D = $HoldPosition
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
-onready var Wand: Sprite = $HoldPosition/Wand
+onready var Wand
 onready var Stats = $Stats
 
 onready var health = Stats.health setget set_health, get_health
@@ -53,6 +53,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	Globals.player = position
+	print(Globals.player)
 	emit_signal("grounded_updated", is_on_floor())
 
 
@@ -61,7 +63,7 @@ func handle_move_input():
 	velocity.x = lerp(velocity.x, speed * input_direction, get_movement_weight())
 	HoldPosition.look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("shoot") and Wand != null:
 		Wand.fire_projectile(HoldPosition.rotation_degrees)
 
 	if input_direction > 0:
