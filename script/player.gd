@@ -32,6 +32,9 @@ onready var Stats = $Stats
 onready var health = Stats.health setget set_health, get_health
 onready var energy = Stats.energy setget set_energy, get_energy
 
+func get_type():
+	return "player"
+
 func set_health(value):
 	Stats.set_health(value)
 
@@ -55,7 +58,6 @@ func _ready():
 func _physics_process(delta):
 	Globals.player = position
 	emit_signal("grounded_updated", is_on_floor())
-
 
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
