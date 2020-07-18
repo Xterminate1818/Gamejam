@@ -54,7 +54,6 @@ func _ready():
 
 func _physics_process(delta):
 	Globals.player = position
-	print(Globals.player)
 	emit_signal("grounded_updated", is_on_floor())
 
 

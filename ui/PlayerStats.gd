@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-onready var Hearts: TextureProgress = $"Player UI Frame/Hearts"
-onready var Energybar: TextureProgress = $"Player UI Frame/Energy"
+onready var Hearts: TextureProgress = $"Player UI Frame 2/Hearts"
+onready var Energybar: TextureProgress = $"Player UI Frame 2/Energy"
 onready var Regen: Timer = $Regen
 
 var health = 3 setget set_health, get_health
-var energy = 0 setget set_energy, get_energy
+var energy = 5 setget set_energy, get_energy
 
 func _on_Regen_timeout():
 	set_energy(get_energy() + 1)
