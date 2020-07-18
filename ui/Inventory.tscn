@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/Inventory.png" type="Texture" id=1]
 [ext_resource path="res://script/Inventory.gd" type="Script" id=2]
 [ext_resource path="res://art/Wand.png" type="Texture" id=3]
+[ext_resource path="res://art/TripleWand.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SlideIn"
@@ -62,9 +63,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Conduit2" type="TextureButton" parent="Inventory/Conduits"]
+light_mask = -2147483647
+margin_left = -55.0
+margin_top = -20.0
+margin_right = -39.0
+margin_bottom = 2.0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Projectiles" type="Node2D" parent="Inventory"]
 visible = false
 
 [node name="Effects" type="Node2D" parent="Inventory"]
 visible = false
 [connection signal="toggled" from="Inventory/Conduits/Conduit1" to="." method="_on_Conduit1_toggled"]
+[connection signal="toggled" from="Inventory/Conduits/Conduit2" to="." method="_on_Conduit1_toggled"]

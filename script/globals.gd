@@ -7,10 +7,10 @@ enum {Effect1, Effect2, Effect3, Effect4}
 const TILE_SIZE = 16
 
 ###
-var conduit1_ps = preload("res://magic/Wands/Conduit1.tscn")
-var conduit2_ps
-var conduit3_ps
-var conduit4_ps
+var conduit1_ps = preload("res://magic/Wands/ChargedWand.tscn")
+var conduit2_ps = preload("res://magic/Wands/TripleWand.tscn")
+var conduit3_ps =
+var conduit4_ps =
 
 var projectile1_ps = preload("res://magic/projectiles/Projectile1.tscn")
 var projectile2_ps
