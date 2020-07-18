@@ -1,10 +1,10 @@
 extends Sprite
 
 onready var ShootDelay : Timer = $ShootDelay
-onready var ProjectileSpawn : Timer = $ProjectileSpawn
+onready var ProjectileSpawn : Position2D = $ProjectileSpawn
 onready var Player = get_parent().get_parent()
 
-export var projectile_ps = globals.WHITE_PROJECTILE_PS
+var projectile_ps = Globals.WHITE_PROJECTILE_PS
 
 func fire_projectile(rot):
 	if ShootDelay.is_stopped() and Player.energy != 0:
