@@ -8,6 +8,8 @@ radius = 5.0
 height = 2.0
 
 [node name="PhantomProjectile" type="KinematicBody2D"]
+collision_layer = 2147483656
+collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
