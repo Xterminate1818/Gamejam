@@ -89,7 +89,6 @@ position = Vector2( 0, -7 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0, -12 )
 texture = ExtResource( 6 )
 vframes = 3
