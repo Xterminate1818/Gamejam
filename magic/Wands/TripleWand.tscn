@@ -19,3 +19,4 @@ position = Vector2( -8.01086e-05, -22 )
 position = Vector2( 4.99993, -20 )
 
 [node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.3

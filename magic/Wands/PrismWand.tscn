@@ -4,6 +4,7 @@
 [ext_resource path="res://magic/Wands/WandClass.gd" type="Script" id=2]
 
 [node name="PrismWand" type="Sprite"]
+position = Vector2( 4, 0 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 offset = Vector2( 0, -10 )
@@ -14,3 +15,5 @@ position = Vector2( 0, -20 )
 rotation = -1.5708
 
 [node name="ShootDelay" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
