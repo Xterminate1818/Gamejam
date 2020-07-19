@@ -33,7 +33,6 @@ onready var Effect4 = $Inventory/Effects/Effect4
 func _process(delta):
 	if Input.is_action_just_pressed("inventory"):
 		set_open(!open)
-	print(active_conduit)
 
 func set_open(new):
 	if open != new:
