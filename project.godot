@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://script/ItemPickup.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://ai/Enemy.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://script/Projectile.gd"
@@ -31,6 +36,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Collectable": "",
+"Enemy": "",
 "Projectile": "",
 "StateMachine": "",
 "Wand": ""

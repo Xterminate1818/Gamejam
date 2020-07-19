@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/SpinningBone.png" type="Texture" id=1]
 [ext_resource path="res://ai/SpinningBone.gd" type="Script" id=2]
-[ext_resource path="res://Sound Effects/Hit.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sound Effects/Hit Wall.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Bone Throw"
@@ -46,13 +44,3 @@ autoplay = "Bone Throw"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Hit Wall" type="AudioStreamPlayer" parent="Node"]
-stream = ExtResource( 3 )
-pitch_scale = 0.77
-
-[node name="Hit" type="AudioStreamPlayer" parent="Node"]
-stream = ExtResource( 4 )
-pitch_scale = 0.54
