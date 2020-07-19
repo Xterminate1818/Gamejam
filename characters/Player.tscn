@@ -89,6 +89,7 @@ position = Vector2( 0, -7 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -12 )
 texture = ExtResource( 6 )
 vframes = 3
@@ -124,4 +125,3 @@ position = Vector2( 0, -7 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 visible = false
 polygon = PoolVector2Array( -6, -12, -6, -5, -7, -5, -7, -3, -6, -3, -6, 2, -5, 2, -5, 4, -6, 4, -6, 5, -7, 5, -7, 7, 5, 7, 5, 3, 6, 3, 6, -1, 5, -1, 5, -2, 6, -2, 6, -3, 7, -3, 7, -5, 6, -5, 6, -6, 5, -6, 5, -7, 4, -7, 4, -8, 3, -8, 3, -9, 1, -9, 1, -10, -3, -10, -3, -11, -4, -11, -4, -12, -6, -12 )
-[connection signal="grounded_updated" from="." to="Camera" method="_on_grounded_updated"]

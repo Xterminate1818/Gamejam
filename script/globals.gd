@@ -9,8 +9,8 @@ const TILE_SIZE = 16
 ###
 var conduit1_ps = preload("res://magic/Wands/ChargedWand.tscn")
 var conduit2_ps = preload("res://magic/Wands/TripleWand.tscn")
-var conduit3_ps =
-var conduit4_ps =
+var conduit3_ps = preload("res://magic/Wands/BouncyWand.tscn")
+var conduit4_ps = preload("res://magic/Wands/PrismWand.tscn")
 
 var projectile1_ps = preload("res://magic/projectiles/Projectile1.tscn")
 var projectile2_ps
@@ -38,6 +38,4 @@ var Magic: Array = [
 ]
 ###
 
-var WHITE_PROJECTILE_PS = preload("res://magic/projectiles/WhiteProjectile.tscn")
-var basic_wand_ps = preload("res://magic/Wands/BasicWand.tscn")
 var player = Vector2()
