@@ -74,19 +74,39 @@ func add_item(index):
 func _on_Conduit1_toggled():
 	if Conduit1.is_visible() and active_conduit != Globals.Magic[Globals.Conduit1]:
 		active_conduit = Globals.Magic[Globals.Conduit1]
-		parent.WandManager.set_current_conduit(active_conduit)
+		parent.WandPosition.set_current_conduit(active_conduit)
 
 func _on_Conduit2_toggled():
 	if Conduit2.is_visible() and active_conduit != Globals.Magic[Globals.Conduit2]:
 		active_conduit = Globals.Magic[Globals.Conduit2]
-		parent.WandManager.set_current_conduit(active_conduit)
+		parent.WandPosition.set_current_conduit(active_conduit)
 
 func _on_Conduit3_toggled():
 	if Conduit3.is_visible() and active_conduit != Globals.Magic[Globals.Conduit3]:
 		active_conduit = Globals.Magic[Globals.Conduit3]
-		parent.WandManager.set_current_conduit(active_conduit)
+		parent.WandPosition.set_current_conduit(active_conduit)
 
 func _on_Conduit4_toggled():
 	if Conduit4.is_visible() and active_conduit != Globals.Magic[Globals.Conduit4]:
 		active_conduit = Globals.Magic[Globals.Conduit4]
-		parent.WandManager.set_current_conduit(active_conduit)
+		parent.WandPosition.set_current_conduit(active_conduit)
+
+
+func _on_Projectile1_pressed():
+	if Projectile1.is_visible() and active_projectile != Globals.Magic[Globals.Projectile1]:
+		active_projectile = Globals.Magic[Globals.Projectile1]
+
+
+func _on_Projectile2_pressed():
+	if Projectile2.is_visible() and active_projectile != Globals.Magic[Globals.Projectile2]:
+		active_projectile = Globals.Magic[Globals.Projectile2]
+
+
+func _on_Projectile3_pressed():
+	if Projectile3.is_visible() and active_projectile != Globals.Magic[Globals.Projectile3]:
+		active_projectile = Globals.Magic[Globals.Projectile3]
+
+
+func _on_Projectile4_pressed():
+	if Projectile4.is_visible() and active_projectile != Globals.Magic[Globals.Projectile4]:
+		active_projectile = Globals.Magic[Globals.Projectile4]

@@ -11,7 +11,7 @@ func _physics_process(delta):
 	if collision != null:
 		on_impact(collision)
 	
-func launch():
+func launch(wand, effect):
 	velocity = (Vector2(speed, 0)).rotated(rotation)
 
 func on_impact(collision):

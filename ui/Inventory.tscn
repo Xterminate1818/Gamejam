@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ui/Inventory.png" type="Texture" id=1]
 [ext_resource path="res://script/Inventory.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://art/TripleWand.png" type="Texture" id=4]
 [ext_resource path="res://art/BouncingWand.png" type="Texture" id=5]
 [ext_resource path="res://art/PrismaticWand.png" type="Texture" id=6]
+[ext_resource path="res://art/PhantomProjectile.png" type="Texture" id=7]
+[ext_resource path="res://art/ecoprojectile.png" type="Texture" id=8]
+[ext_resource path="res://art/WaveProjectile.png" type="Texture" id=9]
+[ext_resource path="res://art/MineProjectile.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "SlideIn"
@@ -109,7 +113,58 @@ __meta__ = {
 }
 
 [node name="Projectiles" type="Node2D" parent="Inventory"]
-visible = false
+
+[node name="Projectile1" type="TextureButton" parent="Inventory/Projectiles"]
+margin_left = -28.0
+margin_top = -19.0
+margin_right = -12.0
+margin_bottom = -5.0
+action_mode = 0
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectile2" type="TextureButton" parent="Inventory/Projectiles"]
+margin_left = 7.0
+margin_top = -19.0
+margin_right = 23.0
+margin_bottom = -5.0
+action_mode = 0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectile3" type="TextureButton" parent="Inventory/Projectiles"]
+margin_left = -28.0
+margin_top = 1.0
+margin_right = -12.0
+margin_bottom = 15.0
+action_mode = 0
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectile4" type="TextureButton" parent="Inventory/Projectiles"]
+margin_left = 7.0
+margin_top = 1.0
+margin_right = 23.0
+margin_bottom = 15.0
+action_mode = 0
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Effects" type="Node2D" parent="Inventory"]
 visible = false
@@ -117,3 +172,7 @@ visible = false
 [connection signal="pressed" from="Inventory/Conduits/Conduit2" to="." method="_on_Conduit2_toggled"]
 [connection signal="pressed" from="Inventory/Conduits/Conduit3" to="." method="_on_Conduit3_toggled"]
 [connection signal="pressed" from="Inventory/Conduits/Conduit4" to="." method="_on_Conduit4_toggled"]
+[connection signal="pressed" from="Inventory/Projectiles/Projectile1" to="." method="_on_Projectile1_pressed"]
+[connection signal="pressed" from="Inventory/Projectiles/Projectile2" to="." method="_on_Projectile2_pressed"]
+[connection signal="pressed" from="Inventory/Projectiles/Projectile3" to="." method="_on_Projectile3_pressed"]
+[connection signal="pressed" from="Inventory/Projectiles/Projectile4" to="." method="_on_Projectile4_pressed"]

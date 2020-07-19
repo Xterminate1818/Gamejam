@@ -1,8 +1,8 @@
 extends Node
 
-enum {Conduit1, Conduit2, Conduit3, Conduit4, }
-enum {Projectile1, Projectile2, Projectile3, Projectile4}
-enum {Effect1, Effect2, Effect3, Effect4}
+enum {Conduit1, Conduit2, Conduit3, Conduit4, 
+Projectile1, Projectile2, Projectile3, Projectile4, 
+Effect1, Effect2, Effect3, Effect4}
 
 const TILE_SIZE = 16
 
@@ -12,10 +12,10 @@ var conduit2_ps = preload("res://magic/Wands/TripleWand.tscn")
 var conduit3_ps = preload("res://magic/Wands/BouncyWand.tscn")
 var conduit4_ps = preload("res://magic/Wands/PrismWand.tscn")
 
-var projectile1_ps
-var projectile2_ps
-var projectile3_ps
-var projectile4_ps
+var projectile1_ps = preload("res://magic/Projectiles/EcoProjectile.tscn")
+var projectile2_ps = preload("res://magic/Projectiles/PhantomProjectile.tscn")
+var projectile3_ps = preload("res://magic/Projectiles/WaveProjectile.tscn")
+var projectile4_ps = preload("res://magic/Projectiles/ExplosiveProjectile.tscn")
 
 var effect1_ps
 var effect2_ps

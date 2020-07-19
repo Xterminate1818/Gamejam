@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Projectile",
 "language": "GDScript",
-"path": "res://script/Projectile.gd"
+"path": "res://magic/Projectiles/Projectile.gd"
 }, {
 "base": "Node",
 "class": "StateMachine",
@@ -30,16 +30,16 @@ _global_script_classes=[ {
 "path": "res://script/StateMachine.gd"
 }, {
 "base": "Sprite",
-"class": "Wand",
+"class": "Wands",
 "language": "GDScript",
-"path": "res://WandClass.gd"
+"path": "res://magic/Wands/WandClass.gd"
 } ]
 _global_script_class_icons={
 "Collectable": "",
 "Enemy": "",
 "Projectile": "",
 "StateMachine": "",
-"Wand": ""
+"Wands": ""
 }
 
 [application]
