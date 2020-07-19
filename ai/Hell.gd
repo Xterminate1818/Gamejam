@@ -3,7 +3,8 @@ extends KinematicBody2D
 var Hell_Projectile = preload("res://ai/BadFireball.tscn")
 var speed = 60
 var gravity =500
-var health = 5
+var health = .5
+
 const UP = Vector2(0, -1)
 
 onready var ShootDelay : Timer = $ShootDelay

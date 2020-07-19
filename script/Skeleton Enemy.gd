@@ -3,7 +3,7 @@ extends KinematicBody2D
 var Spinning_Bone = preload("res://ai/SpinningBone.tscn")
 var speed = 60
 var gravity =500
-var health = 5
+var health = 1
 const UP = Vector2(0, -1)
 
 
