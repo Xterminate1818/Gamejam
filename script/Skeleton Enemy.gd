@@ -16,6 +16,7 @@ func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
 
 func _physics_process(_delta):
+	var dist = global_position.distance_to(Globals.player)
 	if Globals.player != null:
 		if $RayCast2D.get_collider() != null && $RayCast2D.get_collider().has_method("get_type") and $RayCast2D.get_collider().get_type() == "player":
 			velocity = Vector2(0, 0)
@@ -49,8 +50,10 @@ func _physics_process(_delta):
 				temp.global_position = ProjectileSpawn.global_position
 				temp.launch_upright()
 				ShootDelay.start()
-		else:
+		if dist <= 400:
 			velocity.x = position.direction_to(Globals.player).normalized().x
+		else:
+			velocity = Vector2(0, 0)
 	apply_gravity(_delta)
 	velocity.x *= speed
 	velocity = move_and_slide(velocity, UP)
