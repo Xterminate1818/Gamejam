@@ -60,7 +60,7 @@ func _physics_process(delta):
 	Globals.player = position
 	emit_signal("grounded_updated", is_on_floor())
 	if get_health() <= 0:
-		get_tree().change_scene("res://levels/World.tscn")
+		get_tree().change_scene("res://Title/Death Screen'.tscn")
 
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))

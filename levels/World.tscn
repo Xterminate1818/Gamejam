@@ -12,8 +12,23 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 169.977, 24.8286 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sample_text:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 2.0
@@ -46,21 +61,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("sample_text:percent_visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.2, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("sample_text:percent_visible")
 tracks/0/interp = 1
@@ -74,7 +74,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("sample_text:percent_visible")
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("sample_text:percent_visible")
@@ -164,7 +164,7 @@ margin_left = 61.7179
 margin_top = 35.9192
 margin_right = 239.718
 margin_bottom = 108.919
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "AH! I see you finally came after like, forever!"
 autowrap = true
 __meta__ = {
@@ -173,7 +173,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text"]
 autoplay = "Type Writer"
-"anims/Type Writer" = SubResource( 4 )
+"anims/Type Writer" = SubResource( 3 )
 
 [node name="Text4" type="Node" parent="text"]
 
@@ -182,7 +182,7 @@ margin_left = 577.321
 margin_top = 30.5355
 margin_right = 742.321
 margin_bottom = 103.536
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "The wand is an extremely hard weapon to master"
 autowrap = true
 __meta__ = {
@@ -191,7 +191,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text4"]
 autoplay = "Type Writer"
-"anims/Type Writer" = SubResource( 5 )
+"anims/Type Writer" = SubResource( 4 )
 
 [node name="Text5" type="Node" parent="text"]
 
@@ -200,7 +200,7 @@ margin_left = 747.863
 margin_top = 36.84
 margin_right = 881.863
 margin_bottom = 147.84
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Let me show you how to use it!"
 autowrap = true
 __meta__ = {
@@ -209,7 +209,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text5"]
 autoplay = "Type Writer"
-"anims/Type Writer" = SubResource( 6 )
+"anims/Type Writer" = SubResource( 5 )
 
 [node name="Text2" type="Node" parent="text"]
 script = ExtResource( 5 )
@@ -219,7 +219,7 @@ margin_left = 327.0
 margin_top = 23.0
 margin_right = 518.0
 margin_bottom = 96.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "W and Space   
 		
 		   Jump
@@ -232,8 +232,8 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text2"]
 autoplay = "Ok"
-anims/Ok = SubResource( 7 )
-"anims/Type Writer" = SubResource( 8 )
+anims/Ok = SubResource( 6 )
+"anims/Type Writer" = SubResource( 7 )
 
 [node name="Text3" type="Node" parent="text"]
 
@@ -242,7 +242,7 @@ margin_left = 67.5595
 margin_top = 171.0
 margin_right = 870.56
 margin_bottom = 244.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "<A and S> Walk       also arrow keys  work the same!
     "
 autowrap = true
@@ -252,5 +252,5 @@ __meta__ = {
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="text/Text3"]
 autoplay = "Type Writer"
-"anims/Type Writer" = SubResource( 9 )
+"anims/Type Writer" = SubResource( 8 )
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]

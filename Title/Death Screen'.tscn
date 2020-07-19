@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://art/Respawn 1.png" type="Texture" id=1]
+[ext_resource path="res://art/Quit Death 1.png" type="Texture" id=2]
+[ext_resource path="res://art/Good Try.png" type="Texture" id=3]
+[ext_resource path="res://art/Respawn 2.png" type="Texture" id=4]
+[ext_resource path="res://art/You Died.png" type="Texture" id=5]
+[ext_resource path="res://art/Quit DEath 2.png" type="Texture" id=6]
+[ext_resource path="res://Title/Death Screen'.gd" type="Script" id=7]
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 5 )
+centered = false
+script = ExtResource( 7 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_top = 74.0
+margin_right = 190.0
+margin_bottom = 124.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 5.0
+margin_top = 127.0
+margin_right = 105.0
+margin_bottom = 177.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 248.195, 167.584 )
+scale = Vector2( 0.377746, 0.377746 )
+texture = ExtResource( 3 )
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
