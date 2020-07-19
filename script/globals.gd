@@ -12,7 +12,7 @@ var conduit2_ps = preload("res://magic/Wands/TripleWand.tscn")
 var conduit3_ps = preload("res://magic/Wands/BouncyWand.tscn")
 var conduit4_ps = preload("res://magic/Wands/PrismWand.tscn")
 
-var projectile1_ps = preload("res://magic/projectiles/Projectile1.tscn")
+var projectile1_ps
 var projectile2_ps
 var projectile3_ps
 var projectile4_ps

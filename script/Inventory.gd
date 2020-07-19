@@ -72,21 +72,21 @@ func add_item(index):
 			Effect4.visible = true
 
 func _on_Conduit1_toggled():
-	if Conduit1.is_visible():
+	if Conduit1.is_visible() and active_conduit != Globals.Magic[Globals.Conduit1]:
 		active_conduit = Globals.Magic[Globals.Conduit1]
 		parent.WandManager.set_current_conduit(active_conduit)
 
 func _on_Conduit2_toggled():
-	if Conduit2.is_visible():
+	if Conduit2.is_visible() and active_conduit != Globals.Magic[Globals.Conduit2]:
 		active_conduit = Globals.Magic[Globals.Conduit2]
 		parent.WandManager.set_current_conduit(active_conduit)
 
 func _on_Conduit3_toggled():
-	if Conduit3.is_visible():
+	if Conduit3.is_visible() and active_conduit != Globals.Magic[Globals.Conduit3]:
 		active_conduit = Globals.Magic[Globals.Conduit3]
 		parent.WandManager.set_current_conduit(active_conduit)
 
 func _on_Conduit4_toggled():
-	if Conduit4.is_visible():
+	if Conduit4.is_visible() and active_conduit != Globals.Magic[Globals.Conduit4]:
 		active_conduit = Globals.Magic[Globals.Conduit4]
 		parent.WandManager.set_current_conduit(active_conduit)
