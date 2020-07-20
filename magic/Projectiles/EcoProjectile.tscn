@@ -4,15 +4,11 @@
 [ext_resource path="res://magic/Projectiles/Projectile.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 5.0
+radius = 5.09902
 
 [node name="EcoProjectile" type="KinematicBody2D"]
 collision_layer = 8
-<<<<<<< Updated upstream
-collision_mask = 2
-=======
 collision_mask = 6
->>>>>>> Stashed changes
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
