@@ -6,5 +6,6 @@ func fire(projectile, effect):
 		var temp = projectile.instance()
 		get_tree().current_scene.add_child(temp)
 		temp.global_transform = $ProjectileSpawn.global_transform
-		temp.launch(null, null)
+		var energy_cost = temp.launch(null, null)
 		$ShootDelay.start()
+		return energy_cost
