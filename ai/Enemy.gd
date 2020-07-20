@@ -8,6 +8,8 @@ var health = 5
 const UP = Vector2(0, -1)
 
 var velocity = Vector2()
+func get_type():
+	return "player"
 
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier

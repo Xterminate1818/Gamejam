@@ -15,10 +15,9 @@ func _on_Regen_timeout():
 		is_burnout = false
 
 func _process(delta):
-	BurnoutSprite.visible = is_burnout
-	print(Regen.is_stopped())
 	if get_accurate_energy() < Energybar.max_value and Regen.is_stopped():
 		Regen.start()
+	BurnoutSprite.visible = is_burnout
 
 func set_health(value):
 	Hearts.value = clamp(value, Hearts.min_value, Hearts.max_value)

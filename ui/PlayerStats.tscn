@@ -6,6 +6,8 @@
 [ext_resource path="res://ui/Energy.png" type="Texture" id=4]
 [ext_resource path="res://ui/Energy Burnout.png" type="Texture" id=5]
 
+
+
 [node name="Stats" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -47,6 +49,7 @@ __meta__ = {
 }
 
 [node name="Energy Burnout" type="Sprite" parent="Player UI Frame 2"]
+visible = false
 position = Vector2( 23, -1 )
 texture = ExtResource( 5 )
 offset = Vector2( 0, 0.5 )
