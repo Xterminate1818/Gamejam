@@ -175,6 +175,9 @@ margin_left = -22.0
 margin_top = 35.0
 margin_right = 23.0
 margin_bottom = 55.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Inventory/Conduits/Conduit1" to="." method="_on_Conduit1_toggled"]
 [connection signal="pressed" from="Inventory/Conduits/Conduit2" to="." method="_on_Conduit2_toggled"]
 [connection signal="pressed" from="Inventory/Conduits/Conduit3" to="." method="_on_Conduit3_toggled"]
