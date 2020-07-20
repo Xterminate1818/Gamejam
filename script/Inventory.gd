@@ -34,6 +34,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("inventory"):
 		set_open(!open)
 
+func _input(event):
+	if event.is_action_pressed("ui_end"):
+		set_open(false)
+
 func set_open(new):
 	if open != new:
 		if new == true:

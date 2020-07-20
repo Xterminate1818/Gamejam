@@ -1,12 +1,10 @@
 extends KinematicBody2D
 class_name Projectile
 
-export var speed = 300
+export var speed = 400
 var velocity = Vector2.ZERO
 var energy_cost = 1
 var damage = 1
-onready var Hit = get_node("Node/Hit")
-onready var Hit_Wall = get_node("Node/Hit Wall")
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
