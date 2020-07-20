@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://script/typewriter.gd" type="Script" id=5]
 [ext_resource path="res://Music and Fonts(Misc.)/Keb3q1.png" type="Texture" id=6]
 [ext_resource path="res://art/Pedestal.png" type="Texture" id=7]
-[ext_resource path="res://ai/Ogre.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Items/Basic Wand Pickup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 169.977, 24.8286 )
@@ -47,6 +47,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 length = 2.0
+
+[sub_resource type="Animation" id=9]
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("sample_text:percent_visible")
 tracks/0/interp = 1
@@ -59,6 +62,24 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
+
+[sub_resource type="Animation" id=10]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sample_text:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 2.0
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -128,7 +149,6 @@ shape = SubResource( 1 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
 motion_mirroring = Vector2( 490, 500 )
 
@@ -141,7 +161,7 @@ centered = false
 offset = Vector2( -615.364, -675.27 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 954.711, 145.551 )
+position = Vector2( 846.05, 145.314 )
 scale = Vector2( 1, 1.1044 )
 texture = ExtResource( 7 )
 __meta__ = {
@@ -175,12 +195,12 @@ autoplay = "Type Writer"
 [node name="Text4" type="Node" parent="text"]
 
 [node name="sample_text" type="Label" parent="text/Text4"]
-margin_left = 577.321
-margin_top = 30.5355
-margin_right = 742.321
-margin_bottom = 103.536
+margin_left = 558.842
+margin_top = 45.7271
+margin_right = 723.842
+margin_bottom = 118.728
 custom_fonts/font = SubResource( 2 )
-text = "The wand is an extremely hard weapon to master"
+text = "------>"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -192,21 +212,54 @@ autoplay = "Type Writer"
 
 [node name="Text5" type="Node" parent="text"]
 
-[node name="sample_text" type="Label" parent="text/Text5"]
-margin_left = 747.863
-margin_top = 36.84
-margin_right = 881.863
-margin_bottom = 147.84
+[node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text5"]
+autoplay = "Type Writer"
+"anims/Type Writer" = SubResource( 5 )
+
+[node name="Text6" type="Node" parent="text"]
+
+[node name="sample_text" type="Label" parent="text/Text6"]
+anchor_top = -0.000655535
+anchor_bottom = -0.000655535
+margin_left = 823.395
+margin_top = 61.438
+margin_right = 902.395
+margin_bottom = 187.438
 custom_fonts/font = SubResource( 2 )
-text = "Let me show you how to use it!"
+text = "This is the charge wand!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text6"]
 autoplay = "Type Writer"
-"anims/Type Writer" = SubResource( 5 )
+"anims/Type Writer" = SubResource( 9 )
+
+[node name="Text7" type="Node" parent="text"]
+
+[node name="sample_text" type="Label" parent="text/Text7"]
+margin_left = 929.968
+margin_top = 116.068
+margin_right = 1153.97
+margin_bottom = 417.068
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
+text = "Press 'E' to view and equip wands"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text7"]
+autoplay = "Type Writer"
+"anims/Type Writer" = SubResource( 10 )
+
+[node name="Text8" type="Node" parent="text"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="text/Text8"]
+autoplay = "Type Writer"
+"anims/Type Writer" = SubResource( 11 )
 
 [node name="Text2" type="Node" parent="text"]
 script = ExtResource( 5 )
@@ -235,10 +288,10 @@ anims/Ok = SubResource( 6 )
 [node name="Text3" type="Node" parent="text"]
 
 [node name="sample_text" type="Label" parent="text/Text3"]
-margin_left = 67.5595
-margin_top = 171.0
-margin_right = 870.56
-margin_bottom = 244.0
+margin_left = 68.1541
+margin_top = 165.595
+margin_right = 871.155
+margin_bottom = 238.595
 custom_fonts/font = SubResource( 2 )
 text = "<A and S> Walk       also arrow keys  work the same!
     "
@@ -251,6 +304,6 @@ __meta__ = {
 autoplay = "Type Writer"
 "anims/Type Writer" = SubResource( 8 )
 
-[node name="Ogre" parent="." instance=ExtResource( 8 )]
-position = Vector2( 179.376, 152.61 )
+[node name="Area2D2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 846.12, 137.323 )
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]
