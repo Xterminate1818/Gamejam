@@ -6,6 +6,32 @@ var velocity = Vector2.ZERO
 var energy_cost = 1
 var damage = 1
 
+var damage_mod = 1
+var energy_mod = 1
+var bounces_left = 0
+
+var is_bounce = false
+var is_charge = false
+var is_prism = false
+var is_triple = false
+
+func get_wand_type(wand_id):
+	match wand_id:
+		Globals.Conduit1:
+			is_charge = true
+			print("charge")
+		Globals.Conduit2:
+			is_triple = true
+			print("triple")
+			var damage_mod = 0.75
+		Globals.Conduit3:
+			is_bounce = true
+			print("bounce")
+			bounces_left = 1
+		Globals.Conduit4:
+			print("prism")
+			is_prism = true
+
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision != null:
@@ -13,10 +39,17 @@ func _physics_process(delta):
 	
 func launch(wand, effect):
 	velocity = (Vector2(speed, 0)).rotated(rotation)
-	return energy_cost
+	get_wand_type(wand)
+	return energy_cost * energy_mod
 
 func on_impact(collision):
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "enemy":
 		var c = collision.collider
-		c.health -= damage
-	queue_free()
+		c.health -= damage * damage_mod
+		queue_free()
+	elif bounces_left != 0:
+		bounces_left -= 1
+		look_at(position + velocity.bounce(collision.normal))
+		launch(null, null)
+	else:
+		queue_free()

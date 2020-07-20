@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Items/TripleWandPickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ai/Skeleton Enemy.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
@@ -12,9 +11,6 @@ tile_data = PoolIntArray( 65536, 0, 8, 65537, 0, 10, 65538, 0, 10, 65539, 0, 10,
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 60, 176 )
-
-[node name="TripleWand" parent="." instance=ExtResource( 3 )]
-position = Vector2( 67, 168 )
 
 [node name="Skeleton Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 274, 164 )

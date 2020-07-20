@@ -1,6 +1,5 @@
 extends Projectile
 
-
 func _ready():
-	energy_cost = 0
-	damage = 0.5
+	energy_cost = 2
+	damage = 1
