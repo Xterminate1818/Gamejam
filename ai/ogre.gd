@@ -1,6 +1,6 @@
 extends Enemy
 
-var contact_damage = 0.5
+var contact_damage = 1.5
 
 onready var Spr = $Sprite
 onready var DamageCD = $DamageCD
@@ -19,6 +19,9 @@ func _physics_process(delta):
 		elif player.x < global_position.x:
 			Spr.flip_h = true
 			velocity.x = -speed
+			
+	if health <= 0:
+		queue_free()
 
 	if not is_on_floor():
 		velocity.y = 10

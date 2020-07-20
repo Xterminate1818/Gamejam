@@ -252,5 +252,5 @@ autoplay = "Type Writer"
 "anims/Type Writer" = SubResource( 8 )
 
 [node name="Ogre" parent="." instance=ExtResource( 8 )]
-position = Vector2( 89.8511, 126.388 )
+position = Vector2( 179.376, 152.61 )
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]

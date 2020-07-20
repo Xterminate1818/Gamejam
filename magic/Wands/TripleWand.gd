@@ -1,6 +1,5 @@
 extends Wand
 
-
 func fire(projectile, effect):
 	if $ShootDelay.is_stopped() and projectile != null:
 		var temp1 = projectile.instance()
