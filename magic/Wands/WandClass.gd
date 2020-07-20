@@ -1,5 +1,5 @@
 extends Sprite
-class_name Wands
+class_name Wand
 
 func fire(projectile, effect):
 	if $ShootDelay.is_stopped() and projectile != null:

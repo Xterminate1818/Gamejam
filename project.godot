@@ -30,7 +30,7 @@ _global_script_classes=[ {
 "path": "res://script/StateMachine.gd"
 }, {
 "base": "Sprite",
-"class": "Wands",
+"class": "Wand",
 "language": "GDScript",
 "path": "res://magic/Wands/WandClass.gd"
 } ]
@@ -39,7 +39,7 @@ _global_script_class_icons={
 "Enemy": "",
 "Projectile": "",
 "StateMachine": "",
-"Wands": ""
+"Wand": ""
 }
 
 [application]
