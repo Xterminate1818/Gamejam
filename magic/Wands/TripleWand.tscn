@@ -4,7 +4,7 @@
 [ext_resource path="res://magic/Wands/TripleWand.gd" type="Script" id=2]
 
 [node name="TripleWand" type="Sprite"]
-position = Vector2( 2, -2 )
+position = Vector2( 5, 0 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 offset = Vector2( 0, -11 )
@@ -12,11 +12,11 @@ script = ExtResource( 2 )
 
 [node name="ProjectileSpawn1" type="Position2D" parent="."]
 position = Vector2( -5.00007, -20 )
-rotation = -1.64061
+rotation = -1.5708
 
 [node name="ProjectileSpawn2" type="Position2D" parent="."]
 position = Vector2( -8.01086e-05, -22 )
-rotation = -1.6057
+rotation = -1.5708
 
 [node name="ProjectileSpawn3" type="Position2D" parent="."]
 position = Vector2( 4.99993, -20 )

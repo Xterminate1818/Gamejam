@@ -4,7 +4,7 @@
 [ext_resource path="res://magic/Projectiles/ExplosiveProjectile.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 6.0
+radius = 4.12311
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.0120482, 0.192771, 0.534137, 1 )
@@ -33,10 +33,10 @@ collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 0.785398
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]

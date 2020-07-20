@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerStats.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ui/Inventory.tscn" type="PackedScene" id=5]
 [ext_resource path="res://art/WizardM.png" type="Texture" id=6]
 [ext_resource path="res://script/WandPosition.gd" type="Script" id=7]
+[ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -5, -6, -5, -6, -10, -7, -10, -7, -12, -6, -12, -6, -19, -4, -19, -4, -18, -3, -18, -3, -17, 1, -17, 1, -16, 3, -16, 3, -15, 4, -15, 4, -14, 5, -14, 5, -13, 6, -13, 6, -12, 7, -12, 7, -10, 6, -10, 6, -9, 5, -9, 5, -8, 6, -8, 6, -4, 5, -4, 5, 0, -7, 0 )
@@ -85,7 +86,7 @@ drag_margin_bottom = 0.0
 script = ExtResource( 4 )
 
 [node name="WandPosition" type="Position2D" parent="."]
-position = Vector2( 0, -7 )
+position = Vector2( 0, -9 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -124,3 +125,12 @@ position = Vector2( 0, -7 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 visible = false
 polygon = PoolVector2Array( -6, -12, -6, -5, -7, -5, -7, -3, -6, -3, -6, 2, -5, 2, -5, 4, -6, 4, -6, 5, -7, 5, -7, 7, 5, 7, 5, 3, 6, 3, 6, -1, 5, -1, 5, -2, 6, -2, 6, -3, 7, -3, 7, -5, 6, -5, 6, -6, 5, -6, 5, -7, 4, -7, 4, -8, 3, -8, 3, -9, 1, -9, 1, -10, -3, -10, -3, -11, -4, -11, -4, -12, -6, -12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 32, 32 )
+
+[node name="Paralax Dungeon" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 192, 90 )
+texture = ExtResource( 8 )
