@@ -54,6 +54,7 @@ func _physics_process(_delta):
 				temp.launch_upright()
 				ShootDelay.start()
 				queue_free()
+
 		if dist <= 400:
 			velocity.x = position.direction_to(Globals.player).normalized().x
 		else:
