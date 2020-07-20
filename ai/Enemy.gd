@@ -4,7 +4,7 @@ class_name Enemy
 
 var speed = 60
 var gravity = 500
-var health = 5
+var health = 1
 const UP = Vector2(0, -1)
 
 var velocity = Vector2()

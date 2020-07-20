@@ -18,6 +18,5 @@ func launch(wand, effect):
 func on_impact(collision):
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "enemy":
 		var c = collision.collider
-		print(c.health)
 		c.health -= damage
 	queue_free()
