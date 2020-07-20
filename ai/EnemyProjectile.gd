@@ -20,5 +20,4 @@ func on_impact(collision):
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "player":
 		var c = collision.collider
 		c.health -= damage
-	print(collision.collider)
 	queue_free()
