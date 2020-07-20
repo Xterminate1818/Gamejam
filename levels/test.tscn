@@ -17,4 +17,4 @@ position = Vector2( 60, 176 )
 position = Vector2( 67, 168 )
 
 [node name="Skeleton Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 291, 166 )
+position = Vector2( 274, 164 )

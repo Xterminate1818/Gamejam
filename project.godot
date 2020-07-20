@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "EnemyProjectile",
 "language": "GDScript",
-"path": "res://EnemyProjectile.gd"
+"path": "res://ai/EnemyProjectile.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Projectile",
