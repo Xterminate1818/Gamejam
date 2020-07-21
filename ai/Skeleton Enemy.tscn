@@ -60,11 +60,10 @@ one_shot = true
 [node name="Position2D" type="Position2D" parent="."]
 
 [node name="Skeleton" type="Sprite" parent="."]
-modulate = Color( 10, 10, 10, 1 )
 position = Vector2( 1, -1 )
 texture = ExtResource( 3 )
 hframes = 8
-frame = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Skeleton Jump"
