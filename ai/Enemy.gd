@@ -11,6 +11,9 @@ const UP = Vector2(0, -1)
 
 var velocity = Vector2()
 
+func play_hit():
+	$AnimationPlayer2.play("Hit")
+
 func get_player_position():
 	return Player.position
 

@@ -18,5 +18,6 @@ region_rect = Rect2( 0, 0, 8, 8 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 400, 0 )
+collision_mask = 6
 
 [node name="End" type="Position2D" parent="."]

@@ -1,17 +1,26 @@
 extends Node2D
 class_name Beam
 
+var damage = 1
+var energy_cost = 1
+
 var max_cast = Vector2(400, 0)
 
-onready var Beam: Sprite = $Beam
-onready var Begin: Sprite = $Begin
-onready var Ray: RayCast2D = $Raycast2D
-onready var End: Position2D = $End
+func get_collider():
+	return $RayCast2D.get_collider()
+
+func activate():
+	$Beam.visible = true
+	$RayCast2D.enabled = true
+
+func deactivate():
+	$Beam.visible = false
+	$RayCast2D.enabled = false
 
 func _physics_process(delta):
-	Ray.cast_to = max_cast
-	if Ray.is_colliding():
-		End.global_position = Ray.get_collision_point()
+	$RayCast2D.cast_to = max_cast
+	if $RayCast2D.is_colliding():
+		$End.global_position = $RayCast2D.get_collision_point()
 	else:
-		End.position = max_cast
-	Beam.
+		$End.position = max_cast
+	$Beam.region_rect.end.x = $End.position.length()

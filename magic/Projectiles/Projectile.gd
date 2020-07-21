@@ -37,7 +37,7 @@ func _physics_process(delta):
 	if collision != null:
 		on_impact(collision)
 	
-func launch(wand, effect):
+func launch(wand):
 	velocity = (Vector2(speed, 0)).rotated(rotation)
 	get_wand_type(wand)
 	return energy_cost * energy_mod
@@ -46,10 +46,11 @@ func on_impact(collision):
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "enemy":
 		var c = collision.collider
 		c.health -= damage * damage_mod
+		c.play_hit()
 		queue_free()
 	elif bounces_left != 0:
 		bounces_left -= 1
 		look_at(position + velocity.bounce(collision.normal))
-		launch(null, null)
+		launch(null)
 	else:
 		queue_free()

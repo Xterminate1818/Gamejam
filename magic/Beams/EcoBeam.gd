@@ -1,1 +1,4 @@
-extends Node2D
+extends Beam
+
+func _ready():
+	energy_cost = 1
