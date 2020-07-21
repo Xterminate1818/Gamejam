@@ -7,6 +7,7 @@ var energy_cost = 1
 var max_cast = Vector2(400, 0)
 
 func get_collider():
+	$FireSound.play(0.0)
 	return $RayCast2D.get_collider()
 
 func activate():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://magic/Beams/EcoBeam.png" type="Texture" id=1]
 [ext_resource path="res://magic/Beams/EcoBeam.gd" type="Script" id=2]
+[ext_resource path="res://Sound Effects/EcoProjectile.wav" type="AudioStream" id=3]
 
 [node name="EcoBeam" type="Node2D"]
 script = ExtResource( 2 )
@@ -21,3 +22,6 @@ cast_to = Vector2( 400, 0 )
 collision_mask = 6
 
 [node name="End" type="Position2D" parent="."]
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )

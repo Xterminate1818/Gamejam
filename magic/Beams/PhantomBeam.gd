@@ -9,16 +9,17 @@ func activate():
 	$RayCast2D.enabled = true
 	$Area2D.monitoring = true
 
-func get_collider():
-	var r = []
-	for b in $Area2D.get_overlapping_bodies():
-		r.append(b)
-	return r
-
 func deactivate():
 	$Beam.visible = false
 	$RayCast2D.enabled = false
 	$Area2D.monitoring = false
+
+func get_collider():
+	$FireSound.play(0.0)
+	var r = []
+	for b in $Area2D.get_overlapping_bodies():
+		r.append(b)
+	return r
 
 func _physics_process(delta):
 	$RayCast2D.cast_to = max_cast

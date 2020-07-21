@@ -5,6 +5,7 @@ func _ready():
 	damage = 1
 
 func get_collider():
+	$FireSound.play(0.0)
 	var c = $RayCast2D.get_collider()
 	if c != null and c.has_method("get_type") and c.get_type() == "enemy":
 		print("knock")
