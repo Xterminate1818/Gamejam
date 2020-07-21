@@ -4,7 +4,7 @@ var position: Vector2 = Vector2()
 var health = null
 var energy = null
 var unlocked: Array = [Globals.Conduit2]
-var current_scene: PackedScene
+var current_scene: String
 
 func respawn():
 	health = null

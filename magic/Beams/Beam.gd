@@ -14,3 +14,4 @@ func _physics_process(delta):
 		End.global_position = Ray.get_collision_point()
 	else:
 		End.position = max_cast
+	Beam.
