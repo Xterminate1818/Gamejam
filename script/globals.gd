@@ -18,9 +18,9 @@ var projectile3_ps = preload("res://magic/Projectiles/WaveProjectile.tscn")
 var projectile4_ps = preload("res://magic/Projectiles/ExplosiveProjectile.tscn")
 
 var ecobeam_ps = preload("res://magic/Beams/EcoBeam.tscn")
-var phasebeam_ps
-var wavebeam_ps
-var explosivebeam_ps
+var phantombeam_ps = preload("res://magic/Beams/PhantomBeam.tscn")
+var wavebeam_ps = preload("res://magic/Beams/WaveBeam.tscn")
+var explosivebeam_ps = preload("res://magic/Beams/ExplosiveBeam.tscn")
 
 var Magic: Array = [
 	conduit1_ps,

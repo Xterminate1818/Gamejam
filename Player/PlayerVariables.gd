@@ -3,7 +3,7 @@ extends Node
 var position: Vector2 = Vector2()
 var health = null
 var energy = null
-var unlocked: Array = [Globals.Conduit2]
+var unlocked: Array = []
 var current_scene: String
 
 func respawn():
