@@ -10,7 +10,13 @@ func _ready():
 	speed = 50
 
 func _physics_process(delta):
-	var player = Globals.player
+	if knockback != Vector2.ZERO:
+		knockback = lerp(knockback, Vector2.ZERO, 0.5)
+		move_and_slide(-knockback * knockback_amount)
+		if knockback.x < 1 and -1 < knockback.x and knockback.y < 1 and -1 < knockback.y:
+			knockback = Vector2.ZERO
+		return
+	var player = Player.position
 	var distance = global_position.distance_to(player)
 	if distance <= 400:
 		if player.x > global_position.x:

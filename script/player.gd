@@ -43,16 +43,17 @@ func get_type():
 
 func set_health(value):
 	Stats.set_health(value)
+	emit_signal("health_updated", value)
 
 func get_health():
 	return Stats.get_health()
 
 func set_energy(value):
 	Stats.set_energy(value)
+	emit_signal("energy_updated", value)
 
 func get_energy():
 	return Stats.get_energy()
-	
 
 func _ready():
 	gravity = 2 * max_jump_height / pow(jump_duration, 2)
@@ -60,9 +61,8 @@ func _ready():
 	min_jump_velocity = -sqrt(2 * gravity * min_jump_height)
 	walljump_velocity = -sqrt(2 * gravity * walljump_height)
 
-
 func _physics_process(delta):
-	Globals.player = position
+	Player.position = global_position - Vector2(0, 10)
 	emit_signal("grounded_updated", is_on_floor())
 	if get_health() <= 0:
 		get_tree().change_scene("res://Title/Death Screen'.tscn")
@@ -84,8 +84,6 @@ func jump():
 	velocity.y = max_jump_velocity
 	CoyoteTimer.stop()
 
-
-
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
 
@@ -101,13 +99,11 @@ func apply_movement():
 	var was_grounded = is_grounded
 	is_grounded = is_on_floor()
 
-
 func get_movement_weight():
 	if is_on_floor():
 		return 0.2
 	else:
 		return 0.07
-
 
 func _on_Area2D_body_entered(body):
 	pass

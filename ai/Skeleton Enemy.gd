@@ -9,19 +9,19 @@ func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
 
 func _physics_process(_delta):
-	var dist = global_position.distance_to(Globals.player)
+	if knockback != Vector2.ZERO:
+		knockback = lerp(knockback, Vector2.ZERO, 0.5)
+		move_and_slide(-knockback * knockback_amount)
+		if knockback.x < 1 and -1 < knockback.x and knockback.y < 1 and -1 < knockback.y:
+			knockback = Vector2.ZERO
+		return
+	var dist = global_position.distance_to(Player.position)
 	if $RayCast2D.get_collider() != null && $RayCast2D.get_collider().has_method("get_type") and $RayCast2D.get_collider().get_type() == "player":
 		velocity = Vector2(0, 0)
 		throw_bone(Vector2.LEFT)
 	elif $RayCast2D2.get_collider() != null && $RayCast2D2.get_collider().has_method("get_type") and $RayCast2D2.get_collider().get_type() == "player":
 		velocity = Vector2(0, 0)
 		throw_bone(Vector2.RIGHT)
-	elif $RayCast2D3.get_collider() != null && $RayCast2D3.get_collider().has_method("get_type") and $RayCast2D3.get_collider().get_type() == "player":
-		velocity = Vector2(0, 0)
-		throw_bone(Vector2.UP + Vector2.LEFT)
-	elif $RayCast2D4.get_collider() != null && $RayCast2D4.get_collider().has_method("get_type") and $RayCast2D4.get_collider().get_type() == "player":
-		velocity = Vector2(0, 0)
-		throw_bone(Vector2.UP + Vector2.RIGHT)
 	else:
 		apply_gravity(_delta)
 		velocity.x *= speed

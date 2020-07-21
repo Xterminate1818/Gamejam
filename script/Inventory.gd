@@ -42,6 +42,10 @@ onready var Effect3 = $Inventory/Effects/Effect3
 onready var Effect4 = $Inventory/Effects/Effect4
 ###
 
+func _ready():
+	for id in Player.unlocked:
+		add_item(id)
+
 func _process(delta):
 	if Input.is_action_just_pressed("inventory"):
 		set_open(!open)
@@ -55,7 +59,6 @@ func _process(delta):
 		ProjectileSelect.visible = false
 	else:
 		ProjectileSelect.visible = true
-
 
 func _input(event):
 	if event.is_action_pressed("ui_end"):

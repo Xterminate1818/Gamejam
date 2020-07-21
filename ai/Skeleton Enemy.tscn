@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://script/Skeleton Enemy.gd" type="Script" id=1]
+[ext_resource path="res://ai/Skeleton Enemy.gd" type="Script" id=1]
 [ext_resource path="res://art/Skeleton.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
