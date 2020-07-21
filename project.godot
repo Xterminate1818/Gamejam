@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Beam",
+"language": "GDScript",
+"path": "res://magic/Beams/Beam.gd"
+}, {
 "base": "Area2D",
 "class": "Collectable",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://magic/Wands/WandClass.gd"
 } ]
 _global_script_class_icons={
+"Beam": "",
 "Collectable": "",
 "Enemy": "",
 "EnemyProjectile": "",

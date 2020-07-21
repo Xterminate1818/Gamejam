@@ -10,10 +10,9 @@ var energy = 5 setget set_energy, get_energy
 var is_burnout = false
 
 func _ready():
-	print(Player.energy)
-	if Player.health == -1:
+	if Player.health == null:
 		Player.health = Hearts.max_value
-	if Player.energy == -1:
+	if Player.energy == null:
 		Player.energy = Energybar.max_value
 		print("max")
 	set_health(Player.health)
@@ -25,6 +24,10 @@ func _on_Regen_timeout():
 		is_burnout = false
 
 func _process(delta):
+	if Player.health == null:
+		Player.health = Hearts.max_value
+	if Player.energy == null:
+		Player.energy = Energybar.max_value
 	if get_accurate_energy() < Energybar.max_value and Regen.is_stopped():
 		Regen.start()
 	BurnoutSprite.visible = is_burnout
