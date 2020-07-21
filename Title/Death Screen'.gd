@@ -17,7 +17,8 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://levels/World.tscn")
+	Player.respawn()
+	get_tree().change_scene(Player.current_scene)
 
 
 func _on_TextureButton2_pressed():

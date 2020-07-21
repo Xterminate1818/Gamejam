@@ -9,13 +9,14 @@ func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
 
 func _physics_process(_delta):
+	var dist = global_position.distance_to(Player.position)
+	
 	if knockback != Vector2.ZERO:
 		knockback = lerp(knockback, Vector2.ZERO, 0.5)
 		move_and_slide(-knockback * knockback_amount)
 		if knockback.x < 1 and -1 < knockback.x and knockback.y < 1 and -1 < knockback.y:
 			knockback = Vector2.ZERO
 		return
-	var dist = global_position.distance_to(Player.position)
 	if $RayCast2D.get_collider() != null && $RayCast2D.get_collider().has_method("get_type") and $RayCast2D.get_collider().get_type() == "player":
 		velocity = Vector2(0, 0)
 		throw_bone(Vector2.LEFT)
@@ -30,13 +31,14 @@ func _physics_process(_delta):
 	if dist <= 400:
 		velocity.x = position.direction_to(Globals.player).normalized().x
 	else:
-			velocity = Vector2(0, 0)
+		velocity = Vector2(0, 0)
 
 	if velocity.x > 0:
 		$Skeleton.flip_h = false
 	elif velocity.x < 0:
 		$Skeleton.flip_h = true
-	
+
+
 	# Kill
 	if health <= 0:
 		queue_free()
@@ -52,4 +54,10 @@ func throw_bone(direction):
 		temp.global_position = ProjectileSpawn.global_position
 		temp.launch_vector(direction)
 		ShootDelay.start()
+		
+func do_knockback(normal):
+	if $Skeleton.flip_h == true:
+		knockback = Vector2(-4, -4)
+	else:
+		knockback = Vector2(4, 0)
 

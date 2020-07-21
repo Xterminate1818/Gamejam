@@ -21,5 +21,5 @@ func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
 
 func do_knockback(normal):
-	knockback = normal
+	knockback = Vector2(4, 4)
 

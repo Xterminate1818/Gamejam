@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,10 +9,9 @@
 [ext_resource path="res://art/Pedestal.png" type="Texture" id=7]
 [ext_resource path="res://Items/ChargeWandPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://art/ecoprojectile.png" type="Texture" id=9]
+[ext_resource path="res://ai/Skeleton Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://art/Mana.png" type="Texture" id=12]
 [ext_resource path="res://Items/Door.tscn" type="PackedScene" id=13]
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 169.977, 24.8286 )
@@ -263,7 +262,7 @@ margin_right = 1302.35
 margin_bottom = 200.227
 rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = SubResource( 2 )
-text = "Press 'E'and equip a projectile to be able to shoot"
+text = "Press 'E'and equip a spell to be able to shoot"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -280,7 +279,7 @@ margin_right = 1453.41
 margin_bottom = 142.983
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = SubResource( 2 )
-text = "Each projectile does something different"
+text = "Each spell does something different"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -289,13 +288,13 @@ __meta__ = {
 [node name="sample_text4" type="Label" parent="text/Text6"]
 anchor_top = -0.000655535
 anchor_bottom = -0.000655535
-margin_left = 1426.25
+margin_left = 1425.66
 margin_top = 59.1731
-margin_right = 1634.25
+margin_right = 1633.66
 margin_bottom = 167.173
 rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/font = SubResource( 2 )
-text = "This projectile takes no mana but does little damage"
+text = "This spell takes no mana but does little damage"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -340,7 +339,7 @@ margin_right = 2196.39
 margin_bottom = 284.74
 rect_scale = Vector2( 0.45, 0.45 )
 custom_fonts/font = SubResource( 2 )
-text = "Press 'F' to open"
+text = "Press 'F' to open stuff"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -458,5 +457,8 @@ texture = ExtResource( 9 )
 position = Vector2( 1581.08, 38.1216 )
 scale = Vector2( 2.66787, 2.66787 )
 texture = ExtResource( 12 )
+
+[node name="Skeleton Enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 149.132, 146.16 )
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]

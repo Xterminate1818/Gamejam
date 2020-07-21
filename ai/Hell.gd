@@ -37,6 +37,12 @@ func _physics_process(_delta):
 		$Hell.flip_h = true
 	if health <= 0:
 		queue_free()
+		
+func do_knockback(normal):
+	if $Hell.flip_h == true:
+		knockback = Vector2(-4, -4)
+	else:
+		knockback = Vector2(4, 0)
 
 func shoot_fireball(direction):
 	if ShootDelay.is_stopped():

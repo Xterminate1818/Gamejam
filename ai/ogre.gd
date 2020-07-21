@@ -8,8 +8,10 @@ onready var Hurtbox = $Area2D
 
 func _ready():
 	speed = 50
+	health = 3.5
 
 func _physics_process(delta):
+	Player.current_scene = "res://levels/World.tscn"
 	if knockback != Vector2.ZERO:
 		knockback = lerp(knockback, Vector2.ZERO, 0.5)
 		move_and_slide(-knockback * knockback_amount)
@@ -38,3 +40,9 @@ func deal_damage():
 			if body.has_method("get_type") && body.get_type() == "player":
 				body.health -= contact_damage
 				DamageCD.start()
+
+func do_knockback(normal):
+	if Spr.flip_h == true:
+		knockback = Vector2(-4, -4)
+	else:
+		knockback = Vector2(4, 0)
