@@ -9,5 +9,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.get("health") != null:
+		body.play_hit()
 		body.health -= damage * damage_mod
 	

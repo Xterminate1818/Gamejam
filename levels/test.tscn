@@ -13,4 +13,13 @@ tile_data = PoolIntArray( 65536, 0, 8, 65537, 0, 10, 65538, 0, 10, 65539, 0, 10,
 position = Vector2( 60, 176 )
 
 [node name="Ogre" parent="." instance=ExtResource( 3 )]
-position = Vector2( 345, 153 )
+position = Vector2( 346, 167 )
+
+[node name="Ogre2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 415, 164 )
+
+[node name="Ogre" parent="Ogre2" instance=ExtResource( 3 )]
+position = Vector2( 37, -1 )
+
+[node name="Ogre2" parent="Ogre2" instance=ExtResource( 3 )]
+position = Vector2( 67, -5 )
