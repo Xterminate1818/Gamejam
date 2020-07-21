@@ -10,7 +10,7 @@ func apply_gravity(delta, modifier = 1):
 
 func _physics_process(_delta):
 	var dist = global_position.distance_to(Player.position)
-	
+	var gravity = 4350
 	if knockback != Vector2.ZERO:
 		knockback = lerp(knockback, Vector2.ZERO, 0.5)
 		move_and_slide(-knockback * knockback_amount)
@@ -27,9 +27,9 @@ func _physics_process(_delta):
 		apply_gravity(_delta)
 		velocity.x *= speed
 		velocity = move_and_slide(velocity, UP)
-
+		
 	if dist <= 400:
-		velocity.x = position.direction_to(Globals.player).normalized().x
+		velocity.x = position.direction_to(Player.position).normalized().x
 	else:
 		velocity = Vector2(0, 0)
 
@@ -45,7 +45,7 @@ func _physics_process(_delta):
 	
 	# Jump
 	if is_on_wall() and is_on_floor():
-		velocity.y = -150
+		velocity.y = -90
 
 func throw_bone(direction):
 	if ShootDelay.is_stopped():

@@ -460,5 +460,5 @@ texture = ExtResource( 12 )
 
 [node name="Skeleton Enemy" parent="." instance=ExtResource( 11 )]
 position = Vector2( 149.132, 146.16 )
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
