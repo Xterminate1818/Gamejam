@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LogansHurt.wav-fd9c54d42eb52d631999dcd57bb5eaec.sample"
+
+[deps]
+
+source_file="res://Sound Effects/LogansHurt.wav"
+dest_files=[ "res://.import/LogansHurt.wav-fd9c54d42eb52d631999dcd57bb5eaec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

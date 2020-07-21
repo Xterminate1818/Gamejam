@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerStats.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://script/WandPosition.gd" type="Script" id=7]
 [ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=8]
 [ext_resource path="res://Sound Effects/Enemy Hit.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sound Effects/Enemy Hit Wall.wav" type="AudioStream" id=10]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -7, 0, -7, -2, -6, -2, -6, -3, -5, -3, -5, -5, -6, -5, -6, -10, -7, -10, -7, -12, -6, -12, -6, -19, -4, -19, -4, -18, -3, -18, -3, -17, 1, -17, 1, -16, 3, -16, 3, -15, 4, -15, 4, -14, 5, -14, 5, -13, 6, -13, 6, -12, 7, -12, 7, -10, 6, -10, 6, -9, 5, -9, 5, -8, 6, -8, 6, -4, 5, -4, 5, 0, -7, 0 )
@@ -137,10 +136,6 @@ motion_mirroring = Vector2( 32, 32 )
 position = Vector2( 192, 90 )
 texture = ExtResource( 8 )
 
-[node name="Enemy Hit" type="AudioStreamPlayer" parent="."]
+[node name="Enemy Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 volume_db = -8.077
-
-[node name="Enemy Hit Wall" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -7.068

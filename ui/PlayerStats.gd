@@ -35,6 +35,8 @@ func _process(delta):
 	set_energy(Player.energy)
 
 func set_health(value):
+	if Hearts.value > value:
+		get_parent().play_hitsound()
 	Hearts.value = clamp(value, Hearts.min_value, Hearts.max_value)
 	Player.health = get_health()
 

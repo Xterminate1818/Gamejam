@@ -22,6 +22,7 @@ func explode():
 			body.health -= damage
 			if body.has_method("play_hit"):
 				body.play_hit()
+	$Explosion.play(0.0)
 	$Particles2D.emitting = true
 	$KillTimer.start()
 	set_physics_process(false)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ExplosiveBeam.png-7c64be86fe9e64da3dbfe24ba50eb32b.stex"
+path="res://.import/EcoBeam.png-e73d461c66fdae1d39574d3754f12684.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://magic/Projectiles/ExplosiveBeam.png"
-dest_files=[ "res://.import/ExplosiveBeam.png-7c64be86fe9e64da3dbfe24ba50eb32b.stex" ]
+source_file="res://magic/Beams/EcoBeam.png"
+dest_files=[ "res://.import/EcoBeam.png-e73d461c66fdae1d39574d3754f12684.stex" ]
 
 [params]
 

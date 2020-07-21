@@ -29,8 +29,13 @@ onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
 onready var Inventory: CanvasLayer = $Inventory
 onready var Stats = $Stats
 
+onready var HitSound: AudioStreamPlayer2D = $"Enemy Hit"
+
 onready var health = Stats.health setget set_health, get_health
 onready var energy = Stats.energy setget set_energy, get_energy
+
+func play_hitsound():
+	HitSound.play(0.0)
 
 func get_current_conduit():
 	return Inventory.active_conduit

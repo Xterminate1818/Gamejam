@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ai/Hell.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Music and Fonts(Misc.)/Main music.ogg" type="AudioStream" id=4]
+[ext_resource path="res://ai/ogre.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,10 +12,8 @@ tile_data = PoolIntArray( 65536, 0, 8, 65537, 0, 10, 65538, 0, 10, 65539, 0, 10,
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 60, 176 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -14.136
-autoplay = true
+[node name="Ogre" parent="." instance=ExtResource( 3 )]
+position = Vector2( 366, 166 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 267.022, 161.644 )
+[node name="Ogre2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 430, 164 )

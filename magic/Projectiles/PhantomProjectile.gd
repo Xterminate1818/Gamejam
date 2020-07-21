@@ -4,6 +4,7 @@ extends Projectile
 var ignore = []
 
 func _ready():
+	$FireSound.play(0.0)
 	energy_cost = 3
 	damage = 1
 
