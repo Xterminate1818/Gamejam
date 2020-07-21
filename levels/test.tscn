@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ai/Hell.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Music and Fonts(Misc.)/Main music.ogg" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,3 +15,8 @@ position = Vector2( 60, 176 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 266, 142 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -14.136
+autoplay = true

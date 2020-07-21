@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://art/Pedestal.png" type="Texture" id=7]
 [ext_resource path="res://Items/ChargeWandPickup.tscn" type="PackedScene" id=8]
 [ext_resource path="res://art/ecoprojectile.png" type="Texture" id=9]
-[ext_resource path="res://ai/Skeleton Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://art/Mana.png" type="Texture" id=12]
 [ext_resource path="res://Items/Door.tscn" type="PackedScene" id=13]
 
@@ -457,8 +456,5 @@ texture = ExtResource( 9 )
 position = Vector2( 1581.08, 38.1216 )
 scale = Vector2( 2.66787, 2.66787 )
 texture = ExtResource( 12 )
-
-[node name="Skeleton Enemy" parent="." instance=ExtResource( 11 )]
-position = Vector2( 149.132, 146.16 )
-[connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]

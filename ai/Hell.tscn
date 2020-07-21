@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://art/Hell Dude.png" type="Texture" id=1]
 [ext_resource path="res://ai/Hell.gd" type="Script" id=2]
+[ext_resource path="res://Music and Fonts(Misc.)/Hell Hit.tres" type="Animation" id=3]
+[ext_resource path="res://Music and Fonts(Misc.)/Ogre Hit.tres" type="Animation" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.06709, 5.78183 )
@@ -36,11 +38,15 @@ position = Vector2( -7.56425, -7.87261 )
 texture = ExtResource( 1 )
 centered = false
 hframes = 8
-frame = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Devil"
 anims/Devil = SubResource( 2 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+"anims/Hell Hit" = ExtResource( 3 )
+anims/Hit = ExtResource( 4 )
 
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 2.0

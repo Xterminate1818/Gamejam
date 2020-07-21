@@ -7,4 +7,4 @@ func _process(delta):
 		print("1")
 		if Input.is_action_pressed("open"):
 			Player.current_scene = "res://levels/World.tscn"
-			get_tree().change_scene("res://levels/testtscn")
+			get_tree().change_scene("res://levels/test.tscn")

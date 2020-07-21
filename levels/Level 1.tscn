@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
+[ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+
+[node name="Level 1" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 720896, 0, 196609, 720897, 1610612736, 196610, 720898, 1610612736, 196610, 720899, 1610612736, 196610, 720900, 1610612736, 196610, 720901, 1610612736, 196610, 720902, 1610612736, 196610, 720903, 1610612736, 196610, 720904, 1610612736, 196610, 720905, 1610612736, 196610, 720906, 1610612736, 196610, 720907, 1610612736, 196610, 720908, 1610612736, 196610, 720909, 1610612736, 196610, 720910, 1610612736, 196610, 720911, 1610612736, 196610, 720912, 1610612736, 196610, 720913, 1610612736, 196610, 720914, 1610612736, 196610, 720915, 1610612736, 196610, 720916, 1610612736, 196610, 720917, 1610612736, 196610, 720918, 1610612736, 196610, 720919, 1610612736, 196610, 720920, 1610612736, 196610, 720921, 0, 196610, 720922, 0, 196610, 720923, 0, 196610, 720924, 0, 196610, 720925, 0, 196610, 720926, 0, 196610, 720927, 0, 196610, 720928, 0, 196610, 720929, 0, 196610, 720930, 0, 196610, 720931, 0, 196610, 720932, 0, 196610, 720933, 0, 196611 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 384, 180 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72.96, 153.777 )
