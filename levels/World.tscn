@@ -329,6 +329,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="sample_text8" type="Label" parent="text/Text6"]
+anchor_top = -0.000655535
+anchor_bottom = -0.000655535
+margin_left = 1974.39
+margin_top = 135.74
+margin_right = 2196.39
+margin_bottom = 284.74
+rect_scale = Vector2( 0.45, 0.45 )
+custom_fonts/font = SubResource( 2 )
+text = "Press 'F' to open"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="sample_text7" type="Label" parent="text/Text6"]
 anchor_top = -0.000655535
 anchor_bottom = -0.000655535
