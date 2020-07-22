@@ -38,6 +38,8 @@ func play_hitsound():
 	HitSound.play(0.0)
 	$HitAnimation.play("Hit")
 
+
+
 func get_current_conduit():
 	return Inventory.active_conduit
 
@@ -111,5 +113,7 @@ func get_movement_weight():
 	else:
 		return 0.07
 
-func _on_Area2D_body_entered(body):
-	pass
+
+
+func _on_Leap_body_entered(body):
+	$AnimationPlayer.play("Black Fade in")
