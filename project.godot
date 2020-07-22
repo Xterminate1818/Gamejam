@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Collectable",
 "language": "GDScript",
-"path": "res://script/ItemPickup.gd"
+"path": "res://Items/Collectable.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Enemy",

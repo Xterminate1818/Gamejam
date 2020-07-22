@@ -10,9 +10,15 @@ func fire(p):
 	projectile = p
 	if ChargeTimer.is_stopped():
 		ChargeTimer.start()
+		if charge_level == 0:
+			var temp = p.instance()
+			get_tree().current_scene.add_child(temp)
+			var energy = temp.energy_cost
+			print(energy)
+			temp.queue_free()
+			return energy * 2
 
 func _process(delta):
-	print(charge_level)
 	scale = Vector2(charge_level / 2 + 1, charge_level / 2 + 1)
 
 func _on_ChargeTimer_timeout():

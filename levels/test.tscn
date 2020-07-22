@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ai/ogre.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Items/Wand Pickups/ChargeWandPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/Wand Pickups/TripleWandPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Items/Wand Pickups/BounceWandCollectable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Items/Wand Pickups/PrismWandPickup.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +21,15 @@ position = Vector2( 286, 170 )
 
 [node name="Ogre2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 347, 159 )
+
+[node name="PrismWandPickup" parent="." instance=ExtResource( 7 )]
+position = Vector2( 189, 151 )
+
+[node name="ChargeWandPickup" parent="PrismWandPickup" instance=ExtResource( 4 )]
+position = Vector2( -98, -9 )
+
+[node name="TripleWand" parent="PrismWandPickup" instance=ExtResource( 5 )]
+position = Vector2( -64, -9 )
+
+[node name="BounceWandPickup" parent="PrismWandPickup" instance=ExtResource( 6 )]
+position = Vector2( -33, -6 )
