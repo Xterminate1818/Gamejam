@@ -16,7 +16,7 @@ var min_jump_height = 0.6 * 16
 var walljump_height = 2.25 * 16
 var jump_duration = 0.35
 var is_grounded
-var touching_wall = 0 
+var touching_wall = 0
 
 onready var Spr: Sprite = $Sprite
 onready var Occluder: LightOccluder2D = $Sprite/LightOccluder2D
@@ -28,6 +28,7 @@ onready var WandPosition: Node2D = $WandPosition
 onready var ProjectileSpawn: Node2D = $HoldPosition/ProjectileSpawn
 onready var Inventory: CanvasLayer = $Inventory
 onready var Stats = $Stats
+onready var Cam: Camera2D = $Camera
 
 onready var HitSound: AudioStreamPlayer2D = $"Enemy Hit"
 
@@ -74,6 +75,8 @@ func _physics_process(delta):
 	emit_signal("grounded_updated", is_on_floor())
 	if get_health() <= 0:
 		get_tree().change_scene("res://Title/Death Screen'.tscn")
+
+
 
 func handle_move_input():
 	input_direction = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))

@@ -26,6 +26,14 @@ func set_limits():
 	limit_top = (map_limits.position.y + 0.5) * map_cellsize.y
 	limit_bottom = (map_limits.end.y - 0.5) * map_cellsize.y
 
+func set_custom_limits(x, y, w, h, dox = true, doy = true):
+	print(y + h)
+	if dox:
+		limit_left = x + 0.5
+		limit_right = w - 0.5
+	if doy:
+		limit_top = y + 0.5
+		limit_right = h - 0.5
 
 func _process(delta):
 	if facing != 0:
