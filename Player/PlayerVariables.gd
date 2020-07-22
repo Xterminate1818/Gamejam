@@ -4,7 +4,7 @@ var position: Vector2 = Vector2()
 var health = null
 var energy = null
 var unlocked: Array = []
-var current_scene: String setget set_scene
+var current_scene: String
 
 func respawn():
 	health = null
@@ -12,7 +12,3 @@ func respawn():
 
 func reset_magic():
 	unlocked = []
-
-func set_scene(new):
-	print(new)
-	current_scene = new
