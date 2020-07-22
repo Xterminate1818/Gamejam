@@ -463,5 +463,5 @@ texture = ExtResource( 9 )
 position = Vector2( 1581.08, 38.1216 )
 scale = Vector2( 2.66787, 2.66787 )
 texture = ExtResource( 12 )
-[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="text/Text2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
