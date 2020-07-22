@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://ai/ogre.gd" type="Script" id=1]
+[ext_resource path="res://ai/Script/ogre.gd" type="Script" id=1]
 [ext_resource path="res://art/Ogre_Run.png" type="Texture" id=2]
 [ext_resource path="res://Music and Fonts(Misc.)/Ogre Hit.tres" type="Animation" id=3]
 [ext_resource path="res://Music and Fonts(Misc.)/Ogre Run.tres" type="Animation" id=4]
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 4.0

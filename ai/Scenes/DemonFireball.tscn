@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ai/Hell Projectile.gd" type="Script" id=1]
+[ext_resource path="res://ai/Script/Demon Fireball.gd" type="Script" id=1]
 [ext_resource path="res://art/Fireball.png" type="Texture" id=2]
 [ext_resource path="res://Sound Effects/Enemy Hit Wall.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sound Effects/Enemy Hit.wav" type="AudioStream" id=4]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.54199

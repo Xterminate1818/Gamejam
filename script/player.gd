@@ -36,6 +36,7 @@ onready var energy = Stats.energy setget set_energy, get_energy
 
 func play_hitsound():
 	HitSound.play(0.0)
+	$HitAnimation.play("Hit")
 
 func get_current_conduit():
 	return Inventory.active_conduit

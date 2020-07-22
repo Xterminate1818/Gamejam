@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://script/player.gd" type="Script" id=1]
 [ext_resource path="res://ui/PlayerStats.tscn" type="PackedScene" id=2]
 [ext_resource path="res://meta/BoundedCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/PlayerStateMachine.gd" type="Script" id=4]
 [ext_resource path="res://ui/Inventory.tscn" type="PackedScene" id=5]
-[ext_resource path="res://art/WizardM.png" type="Texture" id=6]
+[ext_resource path="res://art/Elf.png" type="Texture" id=6]
 [ext_resource path="res://script/WandPosition.gd" type="Script" id=7]
 [ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=8]
 [ext_resource path="res://Sound Effects/Enemy Hit.wav" type="AudioStream" id=9]
@@ -66,6 +66,23 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "Hit"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 10, 10, 10, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
 script = ExtResource( 1 )
@@ -91,7 +108,7 @@ position = Vector2( 0, -9 )
 script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -12 )
+position = Vector2( 0, -16 )
 texture = ExtResource( 6 )
 vframes = 3
 hframes = 4
@@ -110,6 +127,9 @@ shape = SubResource( 2 )
 anims/Idle = SubResource( 3 )
 anims/Jumping = SubResource( 4 )
 anims/Running = SubResource( 5 )
+
+[node name="HitAnimation" type="AnimationPlayer" parent="."]
+anims/Hit = SubResource( 6 )
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -138,4 +158,4 @@ texture = ExtResource( 8 )
 
 [node name="Enemy Hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
-volume_db = -8.077
+volume_db = 1.0
