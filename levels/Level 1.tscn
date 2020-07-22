@@ -1,17 +1,40 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ai/Scenes/Demon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://art/door.png" type="Texture" id=5]
-[ext_resource path="res://art/Black.png" type="Texture" id=6]
+[ext_resource path="res://Music and Fonts(Misc.)/Tifax-AJ7g.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://levels/Leap Of Faith.gd" type="Script" id=7]
 [ext_resource path="res://levels/AnimationPlayer.gd" type="Script" id=8]
 [ext_resource path="res://art/Black.tres" type="Animation" id=9]
+[ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://art/Black.png" type="Texture" id=11]
+[ext_resource path="res://levels/AnimationPlayer2.gd" type="Script" id=12]
+[ext_resource path="res://levels/Timer.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 85, 8 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Typewriter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
 
 [node name="Level 1" type="Node"]
 
@@ -38,7 +61,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 33, 170 )
+position = Vector2( 30, 174 )
 
 [node name="Demon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 301, 164 )
@@ -55,12 +78,39 @@ anims/Black = ExtResource( 9 )
 "anims/Black Fade in" = ExtResource( 9 )
 script = ExtResource( 8 )
 
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Typewriter = SubResource( 2 )
+script = ExtResource( 12 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-modulate = Color( 0, 0, 0, 0.7 )
-position = Vector2( -287, -179 )
-scale = Vector2( 2.025, 2.41667 )
-texture = ExtResource( 6 )
+modulate = Color( 0, 0, 0, 0 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 11 )
 centered = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 35.0
+margin_top = 90.0
+margin_right = 204.0
+margin_bottom = 106.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = SubResource( 3 )
+text = "Leap of Faith"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skeleton Enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 357, 167 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.386
+one_shot = true
+script = ExtResource( 13 )
+[connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
+[connection signal="body_entered" from="Leap" to="Timer" method="_on_Leap_body_entered"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

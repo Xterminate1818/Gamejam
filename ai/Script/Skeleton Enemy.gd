@@ -1,6 +1,6 @@
 extends Enemy
 
-var Spinning_Bone = preload("res://ai/SpinningBone.tscn")
+var Spinning_Bone = preload("res://ai/Scenes/SpinningBone.tscn")
 
 onready var ShootDelay : Timer = $ShootDelay
 onready var ProjectileSpawn: Node2D = $Position2D
