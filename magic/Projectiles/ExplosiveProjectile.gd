@@ -19,7 +19,7 @@ func on_impact(collision):
 func explode():
 	for body in $Area2D.get_overlapping_bodies():
 		if body.get("health") != null and body.get_type() != "player":
-			body.health -= damage
+			body.health -= damage * damage_mod
 			if body.has_method("play_hit"):
 				body.play_hit()
 	$Explosion.play(0.0)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://magic/Wands/WandClass.gd" type="Script" id=1]
+[ext_resource path="res://magic/Wands/ChargedWand.gd" type="Script" id=1]
 [ext_resource path="res://art/Wand.png" type="Texture" id=2]
 
 [node name="ChargedWand" type="Sprite"]
-position = Vector2( 9, 0 )
+position = Vector2( 11, 0 )
 rotation = 1.5708
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
@@ -16,3 +16,8 @@ rotation = -1.5708
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="ChargeTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+[connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]

@@ -15,6 +15,8 @@ var is_charge = false
 var is_prism = false
 var is_triple = false
 
+onready var Spr: Sprite = $Sprite
+
 func get_wand_type(wand_id):
 	match wand_id:
 		Globals.Conduit1:
@@ -37,8 +39,11 @@ func _physics_process(delta):
 	if collision != null:
 		on_impact(collision)
 	
-func launch(wand):
+func launch(wand, mod = 1):
 	velocity = (Vector2(speed, 0)).rotated(rotation)
+	damage_mod = mod
+	scale = Vector2(1, 1)
+	Spr.scale = Vector2(mod, mod)
 	get_wand_type(wand)
 	return energy_cost * energy_mod
 

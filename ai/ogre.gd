@@ -8,7 +8,7 @@ onready var Hurtbox = $Area2D
 
 func _ready():
 	speed = 50
-	health = 3.5
+	health = 3
 
 func _physics_process(delta):
 	Player.current_scene = "res://levels/World.tscn"
