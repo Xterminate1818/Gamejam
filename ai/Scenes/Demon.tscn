@@ -5,8 +5,6 @@
 [ext_resource path="res://Music and Fonts(Misc.)/Hell Hit.tres" type="Animation" id=3]
 [ext_resource path="res://Music and Fonts(Misc.)/Ogre Hit.tres" type="Animation" id=4]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.06709, 5.78183 )
 
@@ -26,7 +24,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4, 5, 6, 7 ]
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Demon" type="KinematicBody2D"]
 collision_layer = 4
 collision_mask = 11
 script = ExtResource( 2 )

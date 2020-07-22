@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ai/Scenes/Demon.tscn" type="PackedScene" id=4]
 
 [node name="Level 1" type="Node"]
 
@@ -25,3 +26,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 92.1555, 139.436 )
+
+[node name="Demon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 301, 164 )

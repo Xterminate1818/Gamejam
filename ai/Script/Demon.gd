@@ -1,6 +1,6 @@
 extends Enemy
 
-var Hell_Projectile = preload("res://ai/BadFireball.tscn")
+var Hell_Projectile = preload("res://ai/Scenes/DemonFireball.tscn")
 
 onready var ShootDelay : Timer = $ShootDelay
 onready var ProjectileSpawn: Node2D = $Position2D
