@@ -39,6 +39,9 @@ func _physics_process(_delta):
 	if health <= 0:
 		queue_free()
 		
+	if is_on_wall() and is_on_floor():
+		velocity.y = -90
+		
 func do_knockback(normal):
 	if $Hell.flip_h == true:
 		knockback = Vector2(-4, -4)

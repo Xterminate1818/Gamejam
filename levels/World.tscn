@@ -131,6 +131,12 @@ tracks/0/keys = {
 [node name="World" type="Node2D"]
 position = Vector2( 6.67419, 7.34163 )
 
+[node name="Door2" parent="." instance=ExtResource( 13 )]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1932.15, 115.955 )
+scale = Vector2( 1, 1.19488 )
+frame = 0
+
 [node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1932.15, 115.955 )
 scale = Vector2( 1, 1.19488 )
@@ -156,6 +162,7 @@ shape = SubResource( 1 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 modulate = Color( 0.635294, 0.635294, 0.635294, 1 )
 motion_mirroring = Vector2( 490, 500 )
 
@@ -176,7 +183,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1919.33, 146.658 )
+position = Vector2( -21.6742, 153.658 )
 
 [node name="text" type="Node2D" parent="."]
 position = Vector2( -5.81107, -6.20908 )
