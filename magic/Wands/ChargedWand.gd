@@ -7,6 +7,7 @@ var projectile = null
 onready var ChargeTimer: Timer = $ChargeTimer
 
 func fire(p):
+	print(p)
 	projectile = p
 	if ChargeTimer.is_stopped():
 		ChargeTimer.start()
