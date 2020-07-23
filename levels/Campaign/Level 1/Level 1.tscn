@@ -1,21 +1,18 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
-[ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ai/Scenes/Demon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://art/door.png" type="Texture" id=5]
-[ext_resource path="res://Music and Fonts(Misc.)/Tifax-AJ7g.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://levels/other/Leap Of Faith.gd" type="Script" id=7]
-[ext_resource path="res://levels/other/AnimationPlayer.gd" type="Script" id=8]
-[ext_resource path="res://art/Black.tres" type="Animation" id=9]
-[ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=10]
-[ext_resource path="res://art/Black.png" type="Texture" id=11]
-[ext_resource path="res://levels/other/AnimationPlayer2.gd" type="Script" id=12]
-[ext_resource path="res://levels/other/Timer.gd" type="Script" id=13]
-
-
-
+[ext_resource path="res://art/Paralax Dungeon.png" type="Texture" id=6]
+[ext_resource path="res://art/Black.png" type="Texture" id=7]
+[ext_resource path="res://Music and Fonts(Misc.)/m5x7.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://levels/Campaign/Level 1/Leap Of Faith.gd" type="Script" id=9]
+[ext_resource path="res://levels/Campaign/Level 1/Timer.gd" type="Script" id=10]
+[ext_resource path="res://levels/Campaign/Level 1/AnimationPlayer.gd" type="Script" id=11]
+[ext_resource path="res://levels/Campaign/Level 1/AnimationPlayer2.gd" type="Script" id=12]
+[ext_resource path="res://art/Black.tres" type="Animation" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 85, 8 )
@@ -37,7 +34,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 6 )
+font_data = ExtResource( 8 )
 
 [node name="Level 1" type="Node"]
 
@@ -60,26 +57,26 @@ tile_data = PoolIntArray( 65535, 0, 8, 0, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 10, 4
 motion_mirroring = Vector2( 384, 180 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 centered = false
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 30, 174 )
 
 [node name="Demon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 301, 164 )
 
 [node name="Leap" type="Area2D" parent="."]
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Leap"]
 position = Vector2( 668, 217 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Black = ExtResource( 9 )
-"anims/Black Fade in" = ExtResource( 9 )
-script = ExtResource( 8 )
+anims/Black = ExtResource( 13 )
+"anims/Black Fade in" = ExtResource( 13 )
+script = ExtResource( 11 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Typewriter = SubResource( 2 )
@@ -89,16 +86,15 @@ script = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 0 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 11 )
+texture = ExtResource( 7 )
 centered = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_left = 35.0
-margin_top = 78.0
+margin_top = 70.0
 margin_right = 204.0
-margin_bottom = 94.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_bottom = 86.0
+rect_scale = Vector2( 3.25, 3.25 )
 custom_fonts/font = SubResource( 3 )
 text = "Leap of Faith"
 percent_visible = 0.0
@@ -106,14 +102,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skeleton Enemy" parent="." instance=ExtResource( 10 )]
+[node name="Skeleton Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 357, 167 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.386
 one_shot = true
-script = ExtResource( 13 )
-[connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
+script = ExtResource( 10 )
 [connection signal="body_entered" from="Leap" to="Timer" method="_on_Leap_body_entered"]
+[connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
