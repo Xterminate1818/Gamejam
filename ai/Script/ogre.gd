@@ -11,7 +11,6 @@ func _ready():
 	health = 3
 
 func _physics_process(delta):
-	Player.current_scene = "res://levels/World.tscn"
 	if knockback != Vector2.ZERO:
 		knockback = lerp(knockback, Vector2.ZERO, 0.5)
 		move_and_slide(-knockback * knockback_amount)
@@ -20,7 +19,7 @@ func _physics_process(delta):
 		return
 	var player = Player.position
 	var distance = global_position.distance_to(player)
-	if distance <= 400:
+	if distance <= 200:
 		if player.x > global_position.x:
 			Spr.flip_h = false
 			velocity.x = speed

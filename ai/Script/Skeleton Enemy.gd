@@ -28,7 +28,7 @@ func _physics_process(_delta):
 		velocity.x *= speed
 		velocity = move_and_slide(velocity, UP)
 		
-	if dist <= 400:
+	if dist <= 200:
 		velocity.x = position.direction_to(Player.position).normalized().x
 	else:
 		velocity = Vector2(0, 0)

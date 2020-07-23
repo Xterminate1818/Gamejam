@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -16,11 +16,8 @@ func _ready():
 #	pass
 
 
-func _on_TextureButton_pressed():
-	Player.respawn()
-	print(Player.current_scene)
-	get_tree().change_scene(""+Player.current_scene+"")
-
-
-func _on_TextureButton2_pressed():
-	get_tree().quit()
+func _on_Area2D_body_entered(body):
+	if body.has_method("get_type") and body.get_type() == "player":
+		get_tree().change_scene("res://Title/Death Screen'.tscn")
+	else:
+		print("hi")
