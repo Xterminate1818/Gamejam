@@ -95,7 +95,7 @@ script = ExtResource( 11 )
 position = Vector2( 1120, 72 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 481, 207 )
+position = Vector2( 35, 219 )
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 3 )
