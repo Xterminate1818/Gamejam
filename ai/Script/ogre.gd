@@ -1,12 +1,14 @@
 extends Enemy
 
 var contact_damage = 0.5
+export var stationary: bool = false
 
 onready var Spr = $Sprite
 onready var DamageCD = $DamageCD
 onready var Hurtbox = $Area2D
 
 func _ready():
+	gravity = 100
 	speed = 50
 	health = 5
 
@@ -19,18 +21,23 @@ func _physics_process(delta):
 		return
 	var player = Player.position
 	var distance = global_position.distance_to(player)
-	if distance <= 200:
+	if distance <= 200 and is_on_floor():
 		if player.x > global_position.x:
 			Spr.flip_h = false
 			velocity.x = speed
 		elif player.x < global_position.x:
 			Spr.flip_h = true
 			velocity.x = -speed
+	if stationary:
+		velocity.x = 0
 	if health <= 0:
 		queue_free()
 	if not is_on_floor():
-		velocity.y = 50
-	velocity = move_and_slide(velocity)
+		velocity.y = gravity
+	if is_on_floor() and is_on_wall():
+		velocity.y = -100
+		print("jump")
+	velocity = move_and_slide(velocity, Vector2.UP)
 	deal_damage()
 
 func deal_damage():

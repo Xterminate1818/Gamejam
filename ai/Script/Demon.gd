@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	PlayerRaycast.cast_to = player_position - global_position
 	var collider = PlayerRaycast.get_collider()
 	
-	if dist <= 200:
+	if dist >= 200:
 		if collider != null && collider.has_method("get_type") && collider.get_type() == "player":
 			shoot_fireball(position.direction_to(player_position))
 

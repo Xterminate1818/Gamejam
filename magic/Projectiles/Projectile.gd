@@ -25,7 +25,7 @@ func get_wand_type(wand_id):
 		Globals.Conduit2:
 			is_triple = true
 			print("triple")
-			var damage_mod = 0.75
+			var damage_mod = 0.5
 		Globals.Conduit3:
 			is_bounce = true
 			print("bounce")
@@ -48,6 +48,7 @@ func launch(wand, mod = 1):
 	return energy_cost * energy_mod
 
 func on_impact(collision):
+	print(collision.collider)
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "enemy":
 		var c = collision.collider
 		c.health -= damage * damage_mod

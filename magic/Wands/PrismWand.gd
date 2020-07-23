@@ -42,6 +42,9 @@ func fire(projectile):
 			return beam.energy_cost
 
 func _input(event):
+	if Player.energy <= 0:
+		for c in $ProjectileSpawn.get_children():
+			c.deactivate()
 	if event.is_action_released("shoot"):
 		for c in $ProjectileSpawn.get_children():
 			c.deactivate()

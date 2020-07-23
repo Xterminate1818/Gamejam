@@ -3,4 +3,5 @@ extends TileMap
 
 
 func _on_Lever_on():
-	queue_free()
+	collision_layer = 2
+	visible = true
