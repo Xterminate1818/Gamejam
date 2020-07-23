@@ -1,11 +1,12 @@
 extends Sprite
 
 export var unlocked: bool = true
-export var next_scene: String
+export var next_scene: String = ""
 
 onready var door = get_node("AnimationPlayer")
 
 func _process(delta):
+	print(next_scene)
 	if $Area2D.get_overlapping_bodies().size() != 0:
 		if unlocked:
 			$Label.text = "F to Open"

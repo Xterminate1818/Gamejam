@@ -44,7 +44,7 @@ speed_scale = 0.25
 process_material = SubResource( 5 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, -5 )
+position = Vector2( 0, -4 )
 texture = ExtResource( 1 )
 color = Color( 1, 0.4, 0, 1 )
 range_layer_min = -5
