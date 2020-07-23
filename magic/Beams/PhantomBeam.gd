@@ -1,8 +1,8 @@
 extends Beam
 
 func _ready():
-	energy_cost = 3
-	damage = 1
+	energy_cost = 2
+	damage = 2
 
 func activate():
 	$Beam.visible = true
