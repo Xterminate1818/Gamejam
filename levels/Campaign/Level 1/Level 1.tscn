@@ -94,12 +94,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Skeleton Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 357, 167 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.386
+one_shot = true
+script = ExtResource( 10 )
 [connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="Timer" method="_on_Leap_body_entered"]
