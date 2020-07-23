@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ai/Script/Skeleton Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Music and Fonts(Misc.)/Skeleton Hit.tres" type="Animation" id=2]
 [ext_resource path="res://art/Skeleton.png" type="Texture" id=3]
-[ext_resource path="res://Music and Fonts(Misc.)/Ogre Hit.tres" type="Animation" id=4]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 7 )
@@ -44,16 +42,6 @@ enabled = true
 cast_to = Vector2( 80, 0 )
 collision_mask = 3
 
-[node name="RayCast2D3" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( -80, -25 )
-collision_mask = 3
-
-[node name="RayCast2D4" type="RayCast2D" parent="."]
-enabled = true
-cast_to = Vector2( 80, -25 )
-collision_mask = 3
-
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 1.239
 one_shot = true
@@ -71,5 +59,4 @@ autoplay = "Skeleton Jump"
 "anims/Skeleton Jump" = SubResource( 2 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/Hit = ExtResource( 4 )
-"anims/Skeleton Hit" = ExtResource( 2 )
+anims/Hit = ExtResource( 2 )

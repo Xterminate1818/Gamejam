@@ -1,9 +1,17 @@
 extends Enemy
 
+export var max_range: int = 200
+export var stationary: bool = false
+
 var Spinning_Bone = preload("res://ai/Scenes/SpinningBone.tscn")
 
 onready var ShootDelay : Timer = $ShootDelay
 onready var ProjectileSpawn: Node2D = $Position2D
+
+func _ready():
+	health = 1.5
+	$RayCast2D.cast_to.x = -1 * max_range
+	$RayCast2D2.cast_to.y = 1 * max_ranged
 
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
@@ -28,7 +36,7 @@ func _physics_process(_delta):
 		velocity.x *= speed
 		velocity = move_and_slide(velocity, UP)
 		
-	if dist <= 200:
+	if dist <= max_range and not stationary:
 		velocity.x = position.direction_to(Player.position).normalized().x
 	else:
 		velocity = Vector2(0, 0)

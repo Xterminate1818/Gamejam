@@ -7,7 +7,7 @@ onready var ProjectileSpawn: Node2D = $Position2D
 onready var PlayerRaycast: RayCast2D = $PlayerRaycast
 
 func _ready():
-	health = 0.5
+	health = 2
 	knockback_amount = 700
 
 func _physics_process(_delta):

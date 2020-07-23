@@ -8,7 +8,7 @@ onready var Hurtbox = $Area2D
 
 func _ready():
 	speed = 50
-	health = 3
+	health = 5
 
 func _physics_process(delta):
 	if knockback != Vector2.ZERO:

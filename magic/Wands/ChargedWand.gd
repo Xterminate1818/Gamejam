@@ -7,11 +7,10 @@ var projectile = null
 onready var ChargeTimer: Timer = $ChargeTimer
 
 func fire(p):
-	print(p)
 	projectile = p
 	if ChargeTimer.is_stopped():
 		ChargeTimer.start()
-		if charge_level == 0:
+		if charge_level == 0 and p != null:
 			var temp = p.instance()
 			get_tree().current_scene.add_child(temp)
 			var energy = temp.energy_cost
@@ -27,7 +26,7 @@ func _on_ChargeTimer_timeout():
 func _input(event):
 	if event.is_action_released("shoot"):
 		ChargeTimer.stop()
-		if charge_level <= 0:
+		if charge_level <= 0 or projectile == null:
 			charge_level = 0
 			return
 		var temp = projectile.instance()
