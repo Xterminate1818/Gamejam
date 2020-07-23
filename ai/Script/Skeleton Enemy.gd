@@ -11,7 +11,7 @@ onready var ProjectileSpawn: Node2D = $Position2D
 func _ready():
 	health = 1.5
 	$RayCast2D.cast_to.x = -1 * max_range
-	$RayCast2D2.cast_to.y = 1 * max_ranged
+	$RayCast2D2.cast_to.y = 1 * max_range
 
 func apply_gravity(delta, modifier = 1):
 	velocity.y += gravity * delta * modifier
