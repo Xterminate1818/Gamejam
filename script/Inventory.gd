@@ -178,7 +178,7 @@ func _on_Projectile3_pressed():
 
 func _on_Projectile4_pressed():
 	if Projectile4.is_visible() and active_projectile != Globals.Magic[Globals.Projectile4]:
-		Player.current_spell = Globals.Globals.Projectile4
+		Player.current_spell = Globals.Projectile4
 		active_projectile = Globals.Magic[Globals.Projectile4]
 		ProjectileSelect.global_position = Projectile4Position.global_position
 

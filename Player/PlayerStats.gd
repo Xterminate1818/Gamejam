@@ -10,6 +10,7 @@ var energy = 5 setget set_energy, get_energy
 var is_burnout = false
 
 func _ready():
+	yield(get_tree(), "idle_frame")
 	if Player.health == null:
 		Player.health = Hearts.max_value
 	if Player.energy == null:
