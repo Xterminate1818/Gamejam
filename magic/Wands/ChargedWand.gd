@@ -30,7 +30,6 @@ func _input(event):
 		if charge_level <= 0:
 			charge_level = 0
 			return
-		print(charge_level)
 		var temp = projectile.instance()
 		get_tree().current_scene.add_child(temp)
 		temp.global_transform = $ProjectileSpawn.global_transform

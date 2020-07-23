@@ -26,7 +26,7 @@ func fire(projectile):
 	var beam = get_beam_type(projectile)
 	if beam != null:
 		beam.activate()
-	if $ShootDelay.is_stopped():
+	if $ShootDelay.is_stopped() and beam != null:
 		$ShootDelay.start()
 		var c = beam.get_collider()
 		if typeof(c) == TYPE_ARRAY:
@@ -34,11 +34,12 @@ func fire(projectile):
 				if body != null and body.has_method("get_type") && body.get_type() == "enemy":
 					body.health -= beam.damage
 					body.play_hit()
+			return beam.energy_cost
 		else:
 			if c != null and c.has_method("get_type") && c.get_type() == "enemy":
 				c.health -= beam.damage
 				c.play_hit()
-			return 0
+			return beam.energy_cost
 
 func _input(event):
 	if event.is_action_released("shoot"):
