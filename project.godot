@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamejam"
-run/main_scene="res://levels/World.tscn"
+run/main_scene="res://levels/other/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]

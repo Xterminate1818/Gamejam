@@ -12,6 +12,8 @@ var lines = [line0, line1, line2, line3, line4, line5]
 var line_number = 0
 var current_line
 
+signal dialogue_finished
+
 func _process(delta):
 	var p = Player.position
 	if p.x > position.x:
@@ -31,6 +33,8 @@ func next_line():
 		line_number = clamp(line_number + 1, 0, 5)
 	else:
 		$Timer.stop()
+		emit_signal("dialogue_finished")
+		do_exit()
 		pass
 
 func _on_Timer_timeout():
@@ -39,3 +43,6 @@ func _on_Timer_timeout():
 func _on_Delay_timeout():
 	next_line()
 	$Timer.start()
+
+func do_exit():
+	$Typewriter.play("Exit")

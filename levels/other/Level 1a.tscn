@@ -6,7 +6,8 @@
 [ext_resource path="res://ai/Scenes/ogre.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ai/Scenes/Demon.tscn" type="PackedScene" id=6]
-[ext_resource path="res://levels/Level 1a.gd" type="Script" id=7]
+[ext_resource path="res://levels/other/Level 1a.gd" type="Script" id=7]
+
 
 [node name="Level 1a" type="Node"]
 script = ExtResource( 7 )

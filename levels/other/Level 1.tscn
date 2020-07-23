@@ -6,13 +6,14 @@
 [ext_resource path="res://ai/Scenes/Demon.tscn" type="PackedScene" id=4]
 [ext_resource path="res://art/door.png" type="Texture" id=5]
 [ext_resource path="res://Music and Fonts(Misc.)/Tifax-AJ7g.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://levels/Leap Of Faith.gd" type="Script" id=7]
-[ext_resource path="res://levels/AnimationPlayer.gd" type="Script" id=8]
+[ext_resource path="res://levels/other/Leap Of Faith.gd" type="Script" id=7]
+[ext_resource path="res://levels/other/AnimationPlayer.gd" type="Script" id=8]
 [ext_resource path="res://art/Black.tres" type="Animation" id=9]
 [ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://art/Black.png" type="Texture" id=11]
-[ext_resource path="res://levels/AnimationPlayer2.gd" type="Script" id=12]
-[ext_resource path="res://levels/Timer.gd" type="Script" id=13]
+[ext_resource path="res://levels/other/AnimationPlayer2.gd" type="Script" id=12]
+[ext_resource path="res://levels/other/Timer.gd" type="Script" id=13]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 85, 8 )
