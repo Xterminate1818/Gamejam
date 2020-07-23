@@ -11,7 +11,6 @@ func _process(delta):
 			$Label.text = "F to Open"
 			if Input.is_action_just_pressed("open"):
 				Player.current_scene = next_scene
-				print(Player.current_scene)
 				get_tree().change_scene(""+next_scene+"")
 		else:
 			$Label.text = "Locked"
