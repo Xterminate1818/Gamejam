@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name EnemyProjectile
 
-export var speed = 200
+export var speed = 150
 var velocity = Vector2.ZERO
 var damage = 0.5
 

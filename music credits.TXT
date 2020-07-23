@@ -1,0 +1,74 @@
+
+Title:
+    NES Shooter Music (5 tracks, 3 jingles)
+
+Author:
+    SketchyLogic
+
+URL:
+    https://opengameart.org/content/nes-shooter-music-5-tracks-3-jingles
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * FTM.zip
+    * WAV.zip
+
+----------------------------------------
+
+Title:
+    Endless Pain of Nightmares
+
+Author:
+    nene
+
+URL:
+    https://opengameart.org/content/endless-pain-of-nightmares
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * Endless Pain of Nightmares.mid
+    * Endless Pain of Nightmares.WAV
+
+----------------------------------------
+
+Title:
+    8 Bit The Hero
+
+Author:
+    ShwiggityShwag
+
+URL:
+    https://opengameart.org/content/8-bit-the-hero
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * The Hero.ogg
+
+----------------------------------------
+
+Title:
+    Boss Battle #2 ["8 bit"]
+
+Author:
+    nene
+
+URL:
+    https://opengameart.org/content/boss-battle-2-8-bit
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * boss_battle_#2.mid
+    * boss_battle_#2.WAV
+
+
+----------------------------------------
+
+

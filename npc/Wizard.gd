@@ -14,6 +14,9 @@ var current_line
 
 signal dialogue_finished
 
+func _ready():
+	Music.get_node("MainMusic").play(0.0)
+
 func _process(delta):
 	var p = Player.position
 	if p.x > position.x:

@@ -66,6 +66,7 @@ IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
 Globals="*res://script/globals.gd"
 Player="*res://Player/PlayerVariables.gd"
+Music="*res://meta/Music.tscn"
 
 [debug]
 

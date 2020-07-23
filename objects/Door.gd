@@ -7,7 +7,7 @@ onready var door = get_node("AnimationPlayer")
 
 func _process(delta):
 	if $Area2D.get_overlapping_bodies().size() != 0:
-		if true:
+		if unlocked:
 			$Label.text = "F to Open"
 			if Input.is_action_just_pressed("open"):
 				Player.current_scene = next_scene
