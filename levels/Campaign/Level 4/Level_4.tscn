@@ -18,6 +18,8 @@ extents = Vector2( 1535, 10 )
 
 [node name="Door" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1590, 145 )
+next_scene = "res://levels/Campaign/Credits/Credits.tscn"
+text = "Credits. Thank you. "
 
 [node name="door" type="Sprite" parent="."]
 position = Vector2( 16.0554, 160.966 )
@@ -48,6 +50,7 @@ script = ExtResource( 5 )
 
 [node name="Lever" parent="." instance=ExtResource( 4 )]
 position = Vector2( 844, 169 )
+lock = false
 
 [node name="Enemies" type="Node" parent="."]
 
