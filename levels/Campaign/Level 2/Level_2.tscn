@@ -19,6 +19,7 @@ extents = Vector2( 7, 39 )
 [node name="Door" parent="." instance=ExtResource( 8 )]
 position = Vector2( 880, 64 )
 next_scene = "res://levels/Campaign/Level 3/Level_3.tscn"
+text = "Stage 3: Shrek 5?"
 
 [node name="door" type="Sprite" parent="."]
 position = Vector2( 16, 161 )

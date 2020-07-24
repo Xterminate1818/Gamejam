@@ -72,9 +72,7 @@ func do_knockback(normal):
 	else:
 		knockback = Vector2(4, 0)
 
-
-
-func deal_damage():
+func _on_Area2D_body_entered(body):
 	if DamageCD.is_stopped():
 		for body in Hurtbox.get_overlapping_bodies():
 			if body.has_method("get_type") && body.get_type() == "player":
