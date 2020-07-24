@@ -8,7 +8,6 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ai/Scenes/Skeleton Enemy.tscn" type="PackedScene" id=7]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1810, 13 )
 

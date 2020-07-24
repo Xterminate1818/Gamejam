@@ -1,18 +1,17 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://art/door.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=2]
-[ext_resource path="res://art/Spikes.png" type="Texture" id=3]
-[ext_resource path="res://levels/Campaign/Level 3/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://levels/Campaign/Level 3/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/Campaign/Level 3/DisappearingTiles.gd" type="Script" id=5]
-[ext_resource path="res://levels/Campaign/Level 3/TileMap3.gd" type="Script" id=6]
-[ext_resource path="res://meta/DungeonTilemap.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/torch.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/Door.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://ai/Scenes/ogre.tscn" type="PackedScene" id=12]
-
+[ext_resource path="res://art/door.png" type="Texture" id=6]
+[ext_resource path="res://ai/Scenes/ogre.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/torch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/Spikes.png" type="Texture" id=10]
+[ext_resource path="res://levels/Campaign/Level 3/TileMap3.gd" type="Script" id=11]
+[ext_resource path="res://objects/Door.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 152, 18 )
@@ -27,45 +26,48 @@ extents = Vector2( 10, 45 )
 [node name="Spikes" type="Sprite" parent="Spikes"]
 position = Vector2( 753, 208 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 
 [node name="Spikes2" type="Sprite" parent="Spikes"]
 position = Vector2( 833, 208 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 
 [node name="Spikes3" type="Sprite" parent="Spikes"]
 position = Vector2( 913, 208 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 
 [node name="Spikes4" type="Sprite" parent="Spikes"]
 position = Vector2( 993, 208 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 10 )
 
 [node name="Torches" type="Node" parent="."]
 
-[node name="torch8" parent="Torches" instance=ExtResource( 8 )]
+[node name="torch8" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 480, 48 )
 
-[node name="torch7" parent="Torches" instance=ExtResource( 8 )]
+[node name="torch7" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 1136, 48 )
 
-[node name="torch3" parent="Torches" instance=ExtResource( 8 )]
+[node name="torch3" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 672, 48 )
 
-[node name="torch5" parent="Torches" instance=ExtResource( 8 )]
+[node name="torch4" parent="Torches" instance=ExtResource( 9 )]
+position = Vector2( 504.192, 139.481 )
+
+[node name="torch5" parent="Torches" instance=ExtResource( 9 )]
 position = Vector2( 896, 48 )
 
-[node name="Door" parent="." instance=ExtResource( 9 )]
+[node name="Door" parent="." instance=ExtResource( 13 )]
 position = Vector2( 416, 64 )
 next_scene = "res://levels/Campaign/Level 4/Level_4.tscn"
 text = "Stage 4: The Hoard"
 
 [node name="door" type="Sprite" parent="."]
 position = Vector2( 432, 191 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 hframes = 2
 
 [node name="TileMapDisapearing" parent="." instance=ExtResource( 4 )]
@@ -91,16 +93,16 @@ collision_layer = 0
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 262182, 0, 196609, 262183, 0, 196611, 262192, 0, 8, 262193, 0, 10, 262194, 0, 10, 262195, 0, 10, 262196, 0, 10, 262197, 0, 10, 262198, 0, 11, 327713, 0, 196609, 327714, 0, 196611, 327723, 0, 196609, 327724, 0, 196611, 327728, 0, 65544, 327729, 0, 131081, 327730, 0, 131078, 327731, 0, 196617, 327732, 0, 196617, 327733, 0, 131077, 327734, 0, 65542, 327735, 0, 10, 327736, 0, 10, 327737, 0, 10, 327738, 0, 10, 327739, 0, 10, 327740, 0, 10, 327741, 0, 10, 327742, 0, 11, 393264, 0, 65544, 393265, 0, 131081, 393266, 0, 131083, 393269, 0, 65544, 393270, 0, 131081, 393271, 0, 131078, 393272, 0, 196617, 393273, 0, 196617, 393274, 0, 131077, 393275, 0, 131081, 393276, 0, 131078, 393277, 0, 196617, 393278, 0, 196619, 458793, 0, 196608, 458800, 0, 65544, 458801, 0, 131081, 458802, 0, 131083, 458805, 0, 65544, 458806, 0, 131081, 458807, 0, 131083, 458810, 0, 65544, 458811, 0, 131081, 458812, 0, 131083, 524336, 0, 65544, 524337, 0, 131081, 524338, 0, 131083, 524341, 0, 65544, 524342, 0, 131081, 524343, 0, 131083, 524346, 0, 65544, 524347, 0, 131081, 524348, 0, 131083, 589872, 0, 65544, 589873, 0, 131081, 589874, 0, 131083, 589877, 0, 65544, 589878, 0, 131081, 589879, 0, 131083, 589882, 0, 65544, 589883, 0, 131081, 589884, 0, 131083, 655408, 0, 65544, 655409, 0, 131081, 655410, 0, 131083, 655413, 0, 65544, 655414, 0, 131081, 655415, 0, 131083, 655418, 0, 65544, 655419, 0, 131081, 655420, 0, 131083, 720944, 0, 65544, 720945, 0, 131081, 720946, 0, 131083, 720949, 0, 65544, 720950, 0, 131081, 720951, 0, 131083, 720954, 0, 65544, 720955, 0, 131081, 720956, 0, 131083, 786480, 0, 65544, 786481, 0, 131081, 786482, 0, 131083, 786485, 0, 65544, 786486, 0, 131081, 786487, 0, 131083, 786490, 0, 65544, 786491, 0, 131081, 786492, 0, 131083, 852016, 0, 65544, 852017, 0, 131081, 852018, 0, 131083, 852021, 0, 65544, 852022, 0, 131081, 852023, 0, 131083, 852026, 0, 65544, 852027, 0, 131081, 852028, 0, 131083, 917552, 0, 65544, 917553, 0, 131081, 917554, 0, 131083, 917557, 0, 65544, 917558, 0, 131081, 917559, 0, 131083, 917562, 0, 65544, 917563, 0, 131081, 917564, 0, 131083, 983088, 0, 196616, 983089, 0, 196617, 983090, 0, 196619, 983093, 0, 196616, 983094, 0, 196617, 983095, 0, 196619, 983098, 0, 196616, 983099, 0, 196617, 983100, 0, 196619 )
-script = ExtResource( 6 )
+script = ExtResource( 11 )
 
-[node name="Lever" parent="." instance=ExtResource( 10 )]
+[node name="Lever" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1120, 72 )
 
-[node name="Player" parent="." instance=ExtResource( 11 )]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 431.5, 202 )
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 868, 222 )
@@ -135,23 +137,26 @@ shape = SubResource( 2 )
 position = Vector2( -49, -9 )
 shape = SubResource( 2 )
 
-[node name="Ogre" parent="." instance=ExtResource( 12 )]
+[node name="Ogre" parent="." instance=ExtResource( 7 )]
 position = Vector2( 800, -52 )
 
-[node name="Ogre2" parent="." instance=ExtResource( 12 )]
+[node name="Ogre2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 876, -53 )
 
-[node name="Ogre3" parent="." instance=ExtResource( 12 )]
+[node name="Ogre3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 956, -53 )
 
-[node name="Ogre4" parent="." instance=ExtResource( 12 )]
-position = Vector2( 714, 120 )
+[node name="Ogre4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 673.242, 139.816 )
+
+[node name="Ogre5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 712.133, 122.845 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.564706, 0.564706, 0.564706, 1 )
 
 [node name="Ogre6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 334.261, 85.2868 )
+position = Vector2( 334, 85 )
 [connection signal="on" from="Lever" to="TileMapAppearing" method="_on_Lever_on"]
 [connection signal="on" from="Lever" to="TileMapDisapearing" method="_on_Lever_on"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

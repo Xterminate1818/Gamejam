@@ -2,7 +2,7 @@ extends Projectile
 
 func _ready():
 	damage = 3
-	energy_cost = 5
+	energy_cost = 3
 
 func on_impact(collision):
 	if collision.collider.has_method("get_type") && collision.collider.get_type() == "enemy":
