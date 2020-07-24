@@ -168,6 +168,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="body_entered" from="Leap" to="Timer" method="_on_Leap_body_entered"]
-[connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
+[connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]

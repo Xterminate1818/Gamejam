@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Music and Fonts(Misc.)/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://art/Black.png" type="Texture" id=2]
+[ext_resource path="res://Music and Fonts(Misc.)/Credit Music.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Text Scroll"
+length = 45.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 44.7, 44.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30, 177 ), Vector2( 30, -553 ), Vector2( 30, -572 ) ]
+}
+
+[node name="Credits" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 30.0
+margin_top = -572.0
+margin_right = 293.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 1 )
+text = "We can't thank you enough for playing our game. This is our first Game Jam/Coding experience, and had loads of fun. So sincerely, thank you.
+
+
+ From Diego Lugo [dogtots]
+ and Logan Gatlin [Tyranus]
+
+
+
+Sprite Creator: Logan Gatlin [Tyranus]
+
+Coders: Diego Lugo [dogtots], 
+ Logan Gatlin [Tyranus]
+
+
+Sources: 
+Player and Enemy Sprites - Robert [0x72] (https://0x72.itch.io/dungeontileset-ii)
+
+Inventory Sprites - Robert [0x72]
+(https://0x72.itch.io/dungeonui)
+
+Music - Alexmax 
+(https://opengameart.org/content/pixelated-music)
+
+Ambience - JaggedStone
+(https://opengameart.org/content/loopable-dungeon-ambience)
+
+Sound Effects - (https://www.freesfx.co.uk/sfx/lever)
+
+Sound Effects - Sfxr 
+(https://www.drpetter.se/project_sfxr.html)
+
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Text Scroll"
+"anims/Text Scroll" = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -14.312
+autoplay = true
