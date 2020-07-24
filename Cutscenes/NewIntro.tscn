@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://art/Black.png" type="Texture" id=1]
 [ext_resource path="res://Music and Fonts(Misc.)/m5x7.tres" type="DynamicFontData" id=2]
@@ -28,7 +28,62 @@ shader = SubResource( 3 )
 size = 35
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "reset"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Black:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label2:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label3:visible_characters")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:visible_characters")
@@ -129,9 +184,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 material = SubResource( 4 )
-margin_top = 118.0
+margin_top = 112.0
 margin_right = 320.0
-margin_bottom = 161.0
+margin_bottom = 146.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "The Crypt"
@@ -142,6 +197,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label3" type="Label" parent="."]
+margin_top = 152.0
+margin_right = 320.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 6 )
+text = "Press F to skip"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "scroll"
-anims/scroll = SubResource( 6 )
+anims/reset = SubResource( 7 )
+anims/scroll = SubResource( 8 )
