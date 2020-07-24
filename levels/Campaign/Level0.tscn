@@ -20,7 +20,7 @@ color = Color( 0.564706, 0.564706, 0.564706, 1 )
 position = Vector2( 128, 160 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 74, 158 )
+position = Vector2( 74, 157 )
 
 [node name="torch" parent="." instance=ExtResource( 4 )]
 position = Vector2( 85, 91 )
