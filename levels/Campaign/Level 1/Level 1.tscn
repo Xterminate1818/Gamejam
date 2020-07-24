@@ -14,8 +14,9 @@
 [ext_resource path="res://levels/Campaign/Level 1/AnimationPlayer2.gd" type="Script" id=12]
 [ext_resource path="res://art/Black.tres" type="Animation" id=13]
 
+
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 85, 8 )
@@ -41,21 +42,21 @@ font_data = ExtResource( 8 )
 
 [node name="Level 1" type="Node"]
 
-[node name="torch3" parent="." instance=ExtResource( 4 )]
+[node name="torch3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 62, 105 )
 
-[node name="torch7" parent="." instance=ExtResource( 4 )]
+[node name="torch7" parent="." instance=ExtResource( 9 )]
 position = Vector2( 446, 105 )
 
-[node name="torch5" parent="." instance=ExtResource( 4 )]
+[node name="torch5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 318, 105 )
 
-[node name="torch2" parent="." instance=ExtResource( 4 )]
+[node name="torch2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 190, 105 )
 
 [node name="door" type="Sprite" parent="."]
 position = Vector2( 31, 158 )
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 hframes = 2
 
 [node name="Label" type="Label" parent="."]
@@ -92,7 +93,7 @@ margin_top = 60.0
 margin_right = 435.0
 margin_bottom = 137.0
 custom_fonts/font = SubResource( 1 )
-text = "Experiment with combo's, and craft the best magic for the situation."
+text = "Experiment with combos, and craft the best magic for the situation."
 align = 1
 valign = 1
 autowrap = true
@@ -103,7 +104,7 @@ __meta__ = {
 [node name="TileMap" type="TileMap" parent="." groups=[
 "Tilemap",
 ]]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 2
 collision_mask = 0
@@ -123,25 +124,25 @@ centered = false
 position = Vector2( 30, 176 )
 
 [node name="Leap" type="Area2D" parent="."]
-script = ExtResource( 9 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Leap"]
 position = Vector2( 668, 217 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Black = ExtResource( 13 )
-"anims/Black Fade in" = ExtResource( 13 )
-script = ExtResource( 11 )
+anims/Black = ExtResource( 3 )
+"anims/Black Fade in" = ExtResource( 3 )
+script = ExtResource( 5 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Typewriter = SubResource( 3 )
-script = ExtResource( 12 )
+script = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.386
 one_shot = true
-script = ExtResource( 10 )
+script = ExtResource( 7 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.564706, 0.564706, 0.564706, 1 )
@@ -150,7 +151,7 @@ color = Color( 0.564706, 0.564706, 0.564706, 1 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 modulate = Color( 0, 0, 0, 0 )
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -160,7 +161,8 @@ margin_right = 90.0
 margin_bottom = 76.0
 rect_scale = Vector2( 3.25, 3.25 )
 custom_fonts/font = SubResource( 4 )
-text = "Stage 1: Leap of Faith"
+text = "Stage 1:
+Leap of Faith"
 align = 1
 valign = 1
 percent_visible = 0.0
