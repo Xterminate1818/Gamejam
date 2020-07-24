@@ -10,14 +10,8 @@ var energy = 5 setget set_energy, get_energy
 var is_burnout = false
 
 func _ready():
-	yield(get_tree(), "idle_frame")
-	if Player.health == null:
-		Player.health = Hearts.max_value
-	if Player.energy == null:
-		Player.energy = Energybar.max_value
-		print("max")
-	set_health(Player.health)
-	set_energy(Player.energy)
+	Player.health = Hearts.max_value
+	Player.energy = Energybar.max_value
 
 func _on_Regen_timeout():
 	set_energy(get_accurate_energy() + 1)
@@ -38,25 +32,25 @@ func _process(delta):
 func set_health(value):
 	if Hearts.value > value:
 		get_parent().play_hitsound()
-	Hearts.value = clamp(value, Hearts.min_value, Hearts.max_value)
-	Player.health = get_health()
+	Player.health = clamp(value, Hearts.min_value, Hearts.max_value)
+	Hearts.value = Player.health
 
 func get_health():
-	return Hearts.value
+	return Player.health
 
 func set_energy(value):
-	Energybar.value = clamp(value, Energybar.min_value, Energybar.max_value)
-	if Energybar.value == 0:
+	Player.energy = clamp(value, Energybar.min_value, Energybar.max_value)
+	Energybar.value = Player.energy
+	if Player.energy == 0:
 		is_burnout = true
-	Player.energy = get_accurate_energy()
 
 func get_energy():
 	if is_burnout == true:
 		return 0
-	return Energybar.value
+	return Player.energy
 
 func get_accurate_energy():
-	return Energybar.value
+	return Player.energy
 
 func interrupt_regen():
 	Regen.start()

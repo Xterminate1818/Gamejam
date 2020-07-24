@@ -12,7 +12,7 @@
 [node name="Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 77, 320 )
 unlocked = false
-next_scene = "res://levels/Campaign/Level 2/Level 2.tscn"
+next_scene = "res://levels/Campaign/Level 2/Level_2.tscn"
 
 [node name="TileMap" type="TileMap" parent="." groups=[
 "Tilemap",
@@ -48,28 +48,18 @@ position = Vector2( 324, 253 )
 
 [node name="Skeleton Enemy" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 944, 272 )
-max_range = null
-stationary = null
 
 [node name="Skeleton Enemy2" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 656, 272 )
-max_range = null
-stationary = null
 
 [node name="Skeleton Enemy3" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 800, 272 )
-max_range = null
-stationary = null
 
 [node name="Skeleton Enemy4" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 864, 272 )
-max_range = null
-stationary = null
 
 [node name="Skeleton Enemy5" parent="Enemy" instance=ExtResource( 2 )]
 position = Vector2( 736, 272 )
-max_range = null
-stationary = null
 
 [node name="Lever" parent="." instance=ExtResource( 4 )]
 position = Vector2( 984, 280 )

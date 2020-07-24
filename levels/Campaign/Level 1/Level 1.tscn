@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -14,17 +14,13 @@
 [ext_resource path="res://levels/Campaign/Level 1/AnimationPlayer2.gd" type="Script" id=12]
 [ext_resource path="res://art/Black.tres" type="Animation" id=13]
 
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 85, 8 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Typewriter"
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Label:percent_visible")
@@ -39,27 +35,10 @@ tracks/0/keys = {
 "values": [ 0.0, 0.0, 1.0 ]
 }
 
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 8 )
+
 [node name="Level 1" type="Node"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Sprite" type="Sprite" parent="CanvasLayer"]
-modulate = Color( 0, 0, 0, 0 )
-texture = ExtResource( 7 )
-centered = false
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 35.0
-margin_top = 70.0
-margin_right = 204.0
-margin_bottom = 86.0
-rect_scale = Vector2( 3.25, 3.25 )
-custom_fonts/font = SubResource( 3 )
-text = "Leap of Faith"
-percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="torch3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 62, 105 )
@@ -83,7 +62,7 @@ margin_left = 85.0
 margin_top = 84.0
 margin_right = 174.0
 margin_bottom = 113.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Press E to equip
 a wand and spell."
 align = 1
@@ -97,7 +76,7 @@ margin_left = 214.0
 margin_top = 70.0
 margin_right = 312.0
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Most magic uses energy, make sure not to run out!"
 align = 1
 valign = 1
@@ -111,7 +90,7 @@ margin_left = 337.0
 margin_top = 60.0
 margin_right = 435.0
 margin_bottom = 137.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 text = "Expirement with combo's, and craft the best magic for the situation."
 align = 1
 valign = 1
@@ -142,15 +121,12 @@ centered = false
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 30, 176 )
 
-[node name="Demon" parent="." instance=ExtResource( 4 )]
-position = Vector2( 301, 164 )
-
 [node name="Leap" type="Area2D" parent="."]
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Leap"]
 position = Vector2( 668, 217 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Black = ExtResource( 13 )
@@ -158,7 +134,7 @@ anims/Black = ExtResource( 13 )
 script = ExtResource( 11 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/Typewriter = SubResource( 2 )
+anims/Typewriter = SubResource( 3 )
 script = ExtResource( 12 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -168,6 +144,28 @@ script = ExtResource( 10 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.564706, 0.564706, 0.564706, 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 0, 0, 0, 0 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = -20.0
+margin_top = 60.0
+margin_right = 90.0
+margin_bottom = 76.0
+rect_scale = Vector2( 3.25, 3.25 )
+custom_fonts/font = SubResource( 4 )
+text = "Leap of Faith"
+align = 1
+valign = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Leap" to="Timer" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer" method="_on_Leap_body_entered"]
 [connection signal="body_entered" from="Leap" to="AnimationPlayer2" method="_on_Leap_body_entered"]

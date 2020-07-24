@@ -14,9 +14,6 @@ var current_line
 
 signal dialogue_finished
 
-func _ready():
-	Music.get_node("MainMusic").play(0.0)
-
 func _process(delta):
 	var p = Player.position
 	if p.x > position.x:
@@ -49,3 +46,8 @@ func _on_Delay_timeout():
 
 func do_exit():
 	$Typewriter.play("Exit")
+
+
+func _on_CanvasLayer_finished():
+	Music.get_node("MainMusic").play(0.0)
+	$Delay.start()

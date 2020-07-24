@@ -181,4 +181,3 @@ func _on_Projectile4_pressed():
 		Player.current_spell = Globals.Projectile4
 		active_projectile = Globals.Magic[Globals.Projectile4]
 		ProjectileSelect.global_position = Projectile4Position.global_position
-

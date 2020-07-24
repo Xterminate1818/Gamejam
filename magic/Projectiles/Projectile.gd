@@ -44,6 +44,9 @@ func launch(wand, mod = 1):
 	damage_mod = mod
 	scale = Vector2(1, 1)
 	Spr.scale = Vector2(mod, mod)
+	$Light2D.texture_scale = mod / 2
+	if $Particles2D != null:
+		$Particles2D.scale = Vector2(mod, mod)
 	get_wand_type(wand)
 	return energy_cost * energy_mod
 

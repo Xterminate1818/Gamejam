@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://magic/Wands/ChargedWand.gd" type="Script" id=1]
 [ext_resource path="res://art/Wand.png" type="Texture" id=2]
+[ext_resource path="res://art/light.png" type="Texture" id=3]
 
 [node name="ChargedWand" type="Sprite"]
 position = Vector2( 11, 0 )
@@ -20,4 +21,10 @@ one_shot = true
 [node name="ChargeTimer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 0.25
+color = Color( 0, 0.321569, 1, 1 )
+energy = 0.0
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_ChargeTimer_timeout"]
