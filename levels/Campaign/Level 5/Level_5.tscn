@@ -1,11 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://meta/DungeonTilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://art/door.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://npc/Wizard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/torch.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/Pillar.png" type="Texture" id=6]
 
 [node name="Level_5" type="Node"]
+
+[node name="Pillars" type="Node" parent="."]
+
+[node name="Pillar" type="Sprite" parent="Pillars"]
+position = Vector2( -168, 80 )
+scale = Vector2( 3.875, 4 )
+texture = ExtResource( 6 )
+
+[node name="Pillar4" type="Sprite" parent="Pillars"]
+position = Vector2( 168, 80 )
+scale = Vector2( 3.875, 4 )
+texture = ExtResource( 6 )
+
+[node name="Pillar5" type="Sprite" parent="Pillars"]
+position = Vector2( 328, 80 )
+scale = Vector2( 3.875, 4 )
+texture = ExtResource( 6 )
+
+[node name="Pillar3" type="Sprite" parent="Pillars"]
+position = Vector2( -1.52588e-05, 87.5 )
+scale = Vector2( 3.875, 3.6875 )
+texture = ExtResource( 6 )
+
+[node name="Pillar2" type="Sprite" parent="Pillars"]
+position = Vector2( -344, 81 )
+scale = Vector2( 3.875, 4 )
+texture = ExtResource( 6 )
 
 [node name="Wizard" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1, 33 )
@@ -25,3 +54,44 @@ tile_data = PoolIntArray( -131099, 0, 8, -131098, 0, 10, -131097, 0, 10, -131096
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 175 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.564706, 0.564706, 0.564706, 1 )
+
+[node name="Torch" type="Node" parent="."]
+
+[node name="torch" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 0, 110 )
+
+[node name="torch2" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 100, 128 )
+
+[node name="torch6" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 269, 120 )
+
+[node name="torch9" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 269, 120 )
+
+[node name="torch7" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 380, 171 )
+
+[node name="torch12" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 369, 13 )
+
+[node name="torch3" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( -100, 128 )
+
+[node name="torch10" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( -100, 5 )
+
+[node name="torch11" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( 100, 5 )
+
+[node name="torch4" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( -284, 120 )
+
+[node name="torch5" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( -384, 15 )
+
+[node name="torch8" parent="Torch" instance=ExtResource( 5 )]
+position = Vector2( -396, 172 )
