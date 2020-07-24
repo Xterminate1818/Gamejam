@@ -27,8 +27,6 @@ func lock():
 func unlock():
 	unlocked = true
 
-
-
 func _on_x_timeout():
 	Player.current_scene = next_scene
 	get_tree().change_scene(""+next_scene+"")

@@ -1,7 +1,7 @@
 extends Projectile
 
 func _ready():
-	damage = 3
+	damage = 2.5
 	energy_cost = 3
 
 func on_impact(collision):

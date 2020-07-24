@@ -115,4 +115,4 @@ __meta__ = {
 one_shot = true
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="animation_started" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_started"]
-[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_x_timeout"]

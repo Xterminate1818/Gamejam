@@ -2,11 +2,11 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var line0 = ""
-var line1 = "Good, you've finally made it!"
-var line2 = "This will be the final stage of your training."
-var line3 = "Even so, this final test will be no picnic..."
-var line4 = "I have faith in your abilities, my apprentice."
-var line5 = "Go on ahead, I'll meet you at the end of The Crypt."
+var line1 = "Congratulations on making it to the end!"
+var line2 = "You have proven yourself to be adept with magic."
+var line3 = "However, there is one last task you must complete..."
+var line4 = "You must put all of your knowledge to the test"
+var line5 = "LET THE BATTLE BEGIN"
 var lines = [line0, line1, line2, line3, line4, line5]
 
 var line_number = 0
@@ -28,14 +28,17 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 
 func next_line():
+	print(Player.position)
 	if line_number != 5:
-		$Typewriter.play("Typewriter")
+		if line_number == 4 or line_number == 5:
+			$Typewriter.play("FastTypewriter")
+		else:
+			$Typewriter.play("Typewriter")
 		line_number = clamp(line_number + 1, 0, 5)
 	else:
 		$Timer.stop()
 		emit_signal("dialogue_finished")
-		do_exit()
-		pass
+		start_battle()
 
 func _on_Timer_timeout():
 	next_line()
@@ -44,9 +47,17 @@ func _on_Delay_timeout():
 	next_line()
 	$Timer.start()
 
-func do_exit():
-	$Typewriter.play("Exit")
-
-
 func _on_CanvasLayer_finished():
 	$Delay.start()
+
+func start_battle():
+	$Typewriter.play("Exit")
+	yield($Typewriter, "animation_finished")
+	set_physics_process(false)
+	position = Vector2(0, 86)
+	$AnimationPlayer.stop()
+	$Sprite.frame = 11
+	$Label.visible = false
+	$Typewriter.play("Enter")
+	emit_signal("dialogue_finished")
+
