@@ -14,7 +14,7 @@ func _process(delta):
 		if unlocked:
 			$Label.text = "F to Open"
 			if Input.is_action_just_pressed("open"):
-				$CanvasLayer.AnimationPlayer.play("fadeout")
+				$CanvasLayer/AnimationPlayer.play("fadeout")
 		else:
 			$Label.text = "Locked"
 		$Label.visible = true
@@ -27,8 +27,6 @@ func lock():
 func unlock():
 	unlocked = true
 
-
-
-func _on__animation_finished(anim_name):
+func _on_Timer_timeout():
 	Player.current_scene = next_scene
 	get_tree().change_scene(""+next_scene+"")
