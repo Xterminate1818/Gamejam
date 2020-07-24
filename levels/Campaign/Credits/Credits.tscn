@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Music and Fonts(Misc.)/Credit Music.ogg" type="AudioStream" id=2]
+[ext_resource path="res://art/Black.png" type="Texture" id=3]
+[ext_resource path="res://Music and Fonts(Misc.)/m5x7.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://art/Quit Death 1.png" type="Texture" id=5]
+[ext_resource path="res://art/Quit DEath 2.png" type="Texture" id=6]
+[ext_resource path="res://levels/Campaign/Credits/TextureButton.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Text Scroll"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 59.8, 65.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30, 177 ), Vector2( 30, -615.567 ), Vector2( 30, -553 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/TextureButton:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 59.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 110, 830 ), Vector2( 110, 60 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/TextureButton:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Credits" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 30.0
+margin_top = 156.868
+margin_right = 293.0
+margin_bottom = 793.868
+custom_fonts/font = SubResource( 1 )
+text = "We can't thank you enough for playing our game. This is our first Game Jam/Coding experience, and had loads of fun. So sincerely, thank you.
+
+
+ From Diego Lugo [dogtots]
+ and Logan Gatlin [Tyranus]
+
+
+
+Sprite Creator: Logan Gatlin [Tyranus]
+
+Coders: Diego Lugo [dogtots], 
+ Logan Gatlin [Tyranus]
+
+
+Sources: 
+Player and Enemy Sprites - Robert [0x72] (https://0x72.itch.io/dungeontileset-ii)
+
+Inventory Sprites - Robert [0x72]
+(https://0x72.itch.io/dungeonui)
+
+Music - Alexmax 
+(https://opengameart.org/content/pixelated-music)
+
+End Credit Music - Joe Hawley
+(https://www.youtube.com/watch?v=WOtTTkVuCwA)
+
+Ambience - JaggedStone
+(https://opengameart.org/content/loopable-dungeon-ambience)
+
+Sound Effects - (https://www.freesfx.co.uk/sfx/lever)
+
+Sound Effects - Sfxr 
+(https://www.drpetter.se/project_sfxr.html)
+
+"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+visible = false
+margin_left = 110.0
+margin_top = 809.186
+margin_right = 210.0
+margin_bottom = 859.186
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Text Scroll"
+"anims/Text Scroll" = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -14.312
+autoplay = true
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/TextureButton" method="_on_TextureButton_pressed"]
