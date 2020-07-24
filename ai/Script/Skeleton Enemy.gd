@@ -1,12 +1,15 @@
 extends Enemy
 
-export var max_range: int = 200
+export var max_range: int = 250
 export var stationary: bool = false
 
+var contact_damage = 0.5
 var Spinning_Bone = preload("res://ai/Scenes/SpinningBone.tscn")
 
 onready var ShootDelay : Timer = $ShootDelay
 onready var ProjectileSpawn: Node2D = $Position2D
+onready var Hurtbox = $Area2D
+onready var DamageCD = $DamageCD
 
 func _ready():
 	health = 1.5
@@ -69,3 +72,11 @@ func do_knockback(normal):
 	else:
 		knockback = Vector2(4, 0)
 
+
+
+func deal_damage():
+	if DamageCD.is_stopped():
+		for body in Hurtbox.get_overlapping_bodies():
+			if body.has_method("get_type") && body.get_type() == "player":
+				body.health -= contact_damage
+				DamageCD.start()

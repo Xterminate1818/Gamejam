@@ -13,6 +13,7 @@ func _ready():
 	health = 5
 
 func _physics_process(delta):
+	print(is_on_wall())
 	if knockback != Vector2.ZERO:
 		knockback = lerp(knockback, Vector2.ZERO, 0.5)
 		move_and_slide(-knockback * knockback_amount)
@@ -21,22 +22,23 @@ func _physics_process(delta):
 		return
 	var player = Player.position
 	var distance = global_position.distance_to(player)
-	if distance <= 200 and is_on_floor():
+	if distance <= 250 and is_on_floor():
 		if player.x > global_position.x:
 			Spr.flip_h = false
 			velocity.x = speed
 		elif player.x < global_position.x:
 			Spr.flip_h = true
 			velocity.x = -speed
+	else:
+		 velocity.x = 0
 	if stationary:
 		velocity.x = 0
 	if health <= 0:
 		queue_free()
 	if not is_on_floor():
 		velocity.y = gravity
-	if is_on_floor() and is_on_wall():
-		velocity.y = -100
-		print("jump")
+	if is_on_floor() and is_on_wall() == true:
+		velocity.y = -150
 	velocity = move_and_slide(velocity, Vector2.UP)
 	deal_damage()
 

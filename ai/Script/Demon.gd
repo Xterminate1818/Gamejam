@@ -24,7 +24,7 @@ func _physics_process(_delta):
 	var collider = PlayerRaycast.get_collider()
 	
 
-	if dist <= 200:
+	if dist <= 250:
 		velocity.x = position.direction_to(player_position).normalized().x * speed
 		if collider != null && collider.has_method("get_type") && collider.get_type() == "player":
 			shoot_fireball(position.direction_to(player_position))
