@@ -74,7 +74,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.103, 1.0 ]
+"values": [ 0.0, 1.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -120,7 +120,6 @@ custom_fonts/font = SubResource( 6 )
 align = 1
 valign = 1
 autowrap = true
-percent_visible = 0.103
 __meta__ = {
 "_edit_use_anchors_": false
 }
