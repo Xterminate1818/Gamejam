@@ -3,6 +3,8 @@
 [ext_resource path="res://art/PrismaticWand.png" type="Texture" id=1]
 [ext_resource path="res://Items/Collectable.gd" type="Script" id=2]
 
+
+
 [sub_resource type="Animation" id=1]
 resource_name = "Bounce"
 length = 2.0

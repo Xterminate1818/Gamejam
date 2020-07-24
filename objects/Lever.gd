@@ -14,10 +14,13 @@ func _process(delta):
 			emit_signal("on")
 			active = true
 			frame = 1
+			$AudioStreamPlayer2D.play(0.0)
 		elif Input.is_action_just_pressed("open") and active and not lock:
 			emit_signal("off")
 			active = false
 			frame = 0
+			$AudioStreamPlayer2D.play(0.0)
+			$AudioStreamPlayer2D.play(0.0)
 	else:
 		$Label.visible = false
 		

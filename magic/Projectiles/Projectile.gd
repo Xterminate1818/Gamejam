@@ -60,6 +60,7 @@ func on_impact(collision):
 			set_physics_process(false)
 			$CollisionShape2D.disabled = true
 			$Sprite.visible = false
+			$Light2D.visible = false
 			yield($FireSound, "finished")
 		queue_free()
 	elif bounces_left != 0:
@@ -71,5 +72,6 @@ func on_impact(collision):
 			set_physics_process(false)
 			$CollisionShape2D.disabled = true
 			$Sprite.visible = false
+			$Light2D.visible = false
 			yield($FireSound, "finished")
 		queue_free()

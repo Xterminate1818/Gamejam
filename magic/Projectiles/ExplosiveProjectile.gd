@@ -25,6 +25,7 @@ func explode():
 	$Explosion.play(0.0)
 	$Particles2D.emitting = true
 	$KillTimer.start()
+	$Light2D.visible = false
 	set_physics_process(false)
 	$CollisionShape2D.disabled = true
 	$Sprite.visible = false
