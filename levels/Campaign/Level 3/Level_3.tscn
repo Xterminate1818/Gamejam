@@ -157,6 +157,6 @@ color = Color( 0.564706, 0.564706, 0.564706, 1 )
 
 [node name="Ogre6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 334, 85 )
-[connection signal="on" from="Lever" to="TileMapAppearing" method="_on_Lever_on"]
 [connection signal="on" from="Lever" to="TileMapDisapearing" method="_on_Lever_on"]
+[connection signal="on" from="Lever" to="TileMapAppearing" method="_on_Lever_on"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
